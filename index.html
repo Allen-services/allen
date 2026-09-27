@@ -15,14 +15,24 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"LocalBusiness","name":"Allen Services","description":"تعمیرات تخصصی دستگاه اسپرسو خانگی و صنعتی","telephone":"+989183658664","address":{"@type":"PostalAddress","addressLocality":"خمین","streetAddress":"چهارراه قدس","addressCountry":"IR"},"url":"https://allen-services.github.io/allen/","sameAs":["https://instagram.com/allen__services"],"priceRange":"$$"}
 </script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"آیا تعمیر در محل انجام می‌دهید؟","acceptedAnswer":{"@type":"Answer","text":"خیر، تعمیر دستگاه فقط در کارگاه مجهز Allen انجام می‌شود تا عیب‌یابی دقیق و کامل صورت بگیرد."}},
+{"@type":"Question","name":"هزینه تعمیر دستگاه چقدر است؟","acceptedAnswer":{"@type":"Answer","text":"هزینه بعد از عیب‌یابی دستگاه در کارگاه و مشخص شدن قطعات موردنیاز اعلام می‌شود."}},
+{"@type":"Question","name":"رسوب‌زدایی دستگاه هر چند وقت یک‌بار لازم است؟","acceptedAnswer":{"@type":"Answer","text":"بسته به میزان استفاده و سختی آب، معمولاً هر ۳ تا ۶ ماه یک‌بار سرویس و رسوب‌زدایی توصیه می‌شود."}},
+{"@type":"Question","name":"قطعات اورجینال هم دارید؟","acceptedAnswer":{"@type":"Answer","text":"بله، قطعات اصلی و اورجینال دستگاه‌های اسپرسو تأمین می‌شود."}},
+{"@type":"Question","name":"دستگاه اسپرسو هم می‌فروشید؟","acceptedAnswer":{"@type":"Answer","text":"بله، فروش دستگاه اسپرسو خانگی و صنعتی به‌صورت مستقیم از بندر گناوه انجام می‌شود."}}
+]}
+</script>
 <style>
   * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
   body { font-family:Tahoma,"Segoe UI",sans-serif; background:#faf7f0; color:#2b2620; line-height:1.9; }
-  .hero {
-    text-align:center; padding:64px 20px 46px;
-    background:linear-gradient(180deg,#fffdf7,#faf7f0);
-    border-bottom:1px solid #e8e0cf;
-  }
+  nav { position:sticky; top:0; z-index:50; background:#fffdf7ee; backdrop-filter:blur(8px); border-bottom:1px solid #e8e0cf; padding:10px 18px; display:flex; align-items:center; justify-content:space-between; }
+  nav .logo { font-weight:bold; color:#b98f2a; font-size:18px; letter-spacing:2px; text-decoration:none; }
+  nav .links a { color:#4a4438; text-decoration:none; font-size:13.5px; margin-right:16px; }
+  nav .links a:hover { color:#b98f2a; }
+  .hero { text-align:center; padding:64px 20px 46px; background:linear-gradient(180deg,#fffdf7,#faf7f0); border-bottom:1px solid #e8e0cf; }
   .hero img { width:150px; border-radius:22px; margin-bottom:16px; box-shadow:0 10px 30px #b98f2a33; border:3px solid #d4a437; }
   .hero h1 { font-size:40px; letter-spacing:5px; color:#1d1a15; }
   .hero h1 .brand { color:#b98f2a; display:block; }
@@ -45,15 +55,35 @@
   .g-item p { padding:9px; font-size:13px; text-align:center; color:#6b6252; }
   .about { background:#fff; border:1px solid #ece4d2; border-radius:16px; padding:24px 22px; box-shadow:0 4px 14px #b98f2a11; }
   .about p { color:#5c5546; font-size:14.5px; text-align:justify; }
+  details.faq { background:#fff; border:1px solid #ece4d2; border-radius:12px; margin-bottom:10px; padding:14px 18px; box-shadow:0 2px 8px #b98f2a0d; }
+  details.faq summary { cursor:pointer; font-weight:bold; color:#4a4438; font-size:14.5px; list-style:none; }
+  details.faq summary::-webkit-details-marker { display:none; }
+  details.faq summary::before { content:"+"; color:#b98f2a; font-size:20px; margin-left:8px; }
+  details.faq[open] summary::before { content:"−"; }
+  details.faq p { color:#6b6252; font-size:13.5px; margin-top:8px; }
   .contact { background:#1d1a15; color:#f0e9d8; border-radius:20px; padding:30px 20px; text-align:center; }
   .contact h2 { color:#f0e9d8; }
   .contact .row { margin:12px 0; font-size:17px; }
   .contact a { color:#d4a437; text-decoration:none; }
-  footer { text-align:center; padding:26px 16px; color:#a39a83; font-size:13px; }
+  .float-btns { position:fixed; bottom:18px; left:18px; z-index:60; display:flex; flex-direction:column; gap:10px; }
+  .float-btns a { width:54px; height:54px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:26px; text-decoration:none; box-shadow:0 6px 18px #0003; }
+  .float-btns .call { background:#b98f2a; }
+  .float-btns .wa { background:#25d366; }
+  footer { text-align:center; padding:26px 16px 90px; color:#a39a83; font-size:13px; }
+  footer .flinks a { color:#8a6d1f; text-decoration:none; margin:0 8px; font-size:13px; }
 </style>
 </head>
 <body>
-<div class="hero">
+<nav>
+  <a class="logo" href="#top">Allen</a>
+  <div class="links">
+    <a href="#services">خدمات</a>
+    <a href="#work">نمونه‌کارها</a>
+    <a href="#faq">سوالات</a>
+    <a href="#contact">تماس</a>
+  </div>
+</nav>
+<div class="hero" id="top">
   <img src="logo.jpg" alt="Allen">
   <h1><span class="brand">Allen</span><span class="kw">تعمیرات تخصصی دستگاه اسپرسو</span></h1>
   <p class="tag">تعمیر اسپرسوساز خانگی و صنعتی — سرویس، رسوب‌زدایی و قطعات اورجینال</p>
@@ -62,7 +92,7 @@
     <a class="cta ghost" href="https://instagram.com/allen__services">اینستاگرام</a>
   </div>
 </div>
-<section>
+<section id="services">
   <h2>خدمات ما</h2>
   <div class="cards">
     <div class="card"><div class="ic">🔧</div><h3>تعمیرات تخصصی</h3><p>عیب‌یابی و تعمیر دستگاه خانگی و صنعتی در کارگاه مجهز</p></div>
@@ -72,15 +102,24 @@
   </div>
 </section>
 <section>
+  <h2>چرا Allen؟</h2>
+  <div class="cards">
+    <div class="card"><div class="ic">🏭</div><h3>کارگاه مجهز</h3><p>تعمیر تخصصی در کارگاه با ابزار حرفه‌ای</p></div>
+    <div class="card"><div class="ic">✅</div><h3>قطعات اصلی</h3><p>استفاده از قطعات اورجینال در تعمیرات</p></div>
+    <div class="card"><div class="ic">🚢</div><h3>فروش مستقیم</h3><p>فروش دستگاه مستقیم از بندر گناوه</p></div>
+    <div class="card"><div class="ic">☕</div><h3>تخصص اسپرسو</h3><p>تمرکز کامل روی دستگاه‌های اسپرسو خانگی و صنعتی</p></div>
+  </div>
+</section>
+<section id="work">
   <h2>نمونه‌کارها</h2>
   <div class="gallery">
-    <div class="g-item"><img src="gallery/work1.jpg" loading="lazy"><p>سرویس بویلر و لوله‌کشی مسی</p></div>
-    <div class="g-item"><img src="gallery/work2.jpg" loading="lazy"><p>تعمیر داخلی دستگاه صنعتی</p></div>
-    <div class="g-item"><img src="gallery/work3.jpg" loading="lazy"><p>رسوب‌زدایی بویلر</p></div>
-    <div class="g-item"><img src="gallery/work4.jpg" loading="lazy"><p>سرویس کامل دستگاه صنعتی</p></div>
-    <div class="g-item"><img src="gallery/work5.jpg" loading="lazy"><p>سرویس بویلر و اتصالات</p></div>
-    <div class="g-item"><img src="gallery/work6.jpg" loading="lazy"><p>اورهال و بازسازی قطعات</p></div>
-    <div class="g-item"><img src="gallery/work7.jpg" loading="lazy"><p>تعمیر تخصصی دستگاه صنعتی</p></div>
+    <div class="g-item"><img src="gallery/work1.jpg" loading="lazy" alt="سرویس بویلر اسپرسوساز"><p>سرویس بویلر و لوله‌کشی مسی</p></div>
+    <div class="g-item"><img src="gallery/work2.jpg" loading="lazy" alt="تعمیر دستگاه اسپرسو صنعتی"><p>تعمیر داخلی دستگاه صنعتی</p></div>
+    <div class="g-item"><img src="gallery/work3.jpg" loading="lazy" alt="رسوب‌زدایی بویلر اسپرسوساز"><p>رسوب‌زدایی بویلر</p></div>
+    <div class="g-item"><img src="gallery/work4.jpg" loading="lazy" alt="سرویس دستگاه اسپرسو صنعتی"><p>سرویس کامل دستگاه صنعتی</p></div>
+    <div class="g-item"><img src="gallery/work5.jpg" loading="lazy" alt="سرویس بویلر اسپرسوساز"><p>سرویس بویلر و اتصالات</p></div>
+    <div class="g-item"><img src="gallery/work6.jpg" loading="lazy" alt="اورهال دستگاه اسپرسو"><p>اورهال و بازسازی قطعات</p></div>
+    <div class="g-item"><img src="gallery/work7.jpg" loading="lazy" alt="تعمیر تخصصی اسپرسوساز صنعتی"><p>تعمیر تخصصی دستگاه صنعتی</p></div>
   </div>
 </section>
 <section>
@@ -89,7 +128,15 @@
     <p>کارگاه Allen مرجع تخصصی <strong>تعمیر دستگاه اسپرسو</strong> خانگی و صنعتی است. اگر اسپرسوسازت کرمای خوبی نمی‌دهد، بخار ضعیف شده یا دستگاه روشن نمی‌شود، ما عیب‌یابی دقیق انجام می‌دهیم؛ از <strong>سرویس و رسوب‌زدایی اسپرسوساز</strong> تا تعویض قطعات با نمونه اورجینال. همچنین <strong>فروش دستگاه اسپرسو</strong> خانگی و صنعتی را به‌صورت مستقیم از بندر گناوه انجام می‌دهیم. برای مشاوره و ثبت سفارش تعمیر با ما در تماس باشید.</p>
   </div>
 </section>
-<section>
+<section id="faq">
+  <h2>سوالات متداول</h2>
+  <details class="faq"><summary>آیا تعمیر در محل انجام می‌دهید؟</summary><p>خیر، تعمیر دستگاه فقط در کارگاه مجهز Allen انجام می‌شود تا عیب‌یابی دقیق و کامل صورت بگیرد.</p></details>
+  <details class="faq"><summary>هزینه تعمیر دستگاه چقدر است؟</summary><p>هزینه بعد از عیب‌یابی دستگاه در کارگاه و مشخص شدن قطعات موردنیاز اعلام می‌شود.</p></details>
+  <details class="faq"><summary>رسوب‌زدایی هر چند وقت یک‌بار لازم است؟</summary><p>بسته به میزان استفاده و سختی آب، معمولاً هر ۳ تا ۶ ماه یک‌بار سرویس و رسوب‌زدایی توصیه می‌شود.</p></details>
+  <details class="faq"><summary>قطعات اورجینال هم دارید؟</summary><p>بله، قطعات اصلی و اورجینال دستگاه‌های اسپرسو تأمین می‌شود.</p></details>
+  <details class="faq"><summary>دستگاه اسپرسو هم می‌فروشید؟</summary><p>بله، فروش دستگاه اسپرسو خانگی و صنعتی به‌صورت مستقیم از بندر گناوه انجام می‌شود.</p></details>
+</section>
+<section id="contact">
   <div class="contact">
     <h2>تماس با ما</h2>
     <div class="row">📍 خمین، چهارراه قدس</div>
@@ -97,6 +144,13 @@
     <div class="row">📸 <a href="https://instagram.com/allen__services" dir="ltr">@allen__services</a></div>
   </div>
 </section>
-<footer>Allen — تعمیرات تخصصی دستگاه اسپرسو ☕</footer>
+<div class="float-btns">
+  <a class="wa" href="https://wa.me/989183658664" aria-label="واتساپ">💬</a>
+  <a class="call" href="tel:09183658664" aria-label="تماس">📞</a>
+</div>
+<footer>
+  <div class="flinks"><a href="#services">خدمات</a><a href="#work">نمونه‌کارها</a><a href="#faq">سوالات متداول</a><a href="#contact">تماس</a></div>
+  <p style="margin-top:10px">Allen — تعمیرات تخصصی دستگاه اسپرسو ☕</p>
+</footer>
 </body>
 </html>
