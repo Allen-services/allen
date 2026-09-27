@@ -55,7 +55,13 @@
   .g-item p { padding:9px; font-size:13px; text-align:center; color:#6b6252; }
   .about { background:#fff; border:1px solid #ece4d2; border-radius:16px; padding:24px 22px; box-shadow:0 4px 14px #b98f2a11; }
   .about p { color:#5c5546; font-size:14.5px; text-align:justify; }
-  details.faq { background:#fff; border:1px solid #ece4d2; border-radius:12px; margin-bottom:10px; padding:14px 18px; box-shadow:0 2px 8px #b98f2a0d; }
+  .form-box { background:#fff; border:1px solid #ece4d2; border-radius:16px; padding:26px 22px; box-shadow:0 4px 14px #b98f2a11; }
+  .form-box label { display:block; font-size:14px; color:#4a4438; margin:12px 0 4px; font-weight:bold; }
+  .form-box input, .form-box textarea { width:100%; border:1.5px solid #e8e0cf; border-radius:10px; padding:10px 14px; font-family:inherit; font-size:14px; background:#fffdf7; color:#2b2620; }
+  .form-box input:focus, .form-box textarea:focus { outline:none; border-color:#b98f2a; }
+  .form-box textarea { min-height:90px; resize:vertical; }
+  .form-box button { width:100%; margin-top:16px; padding:13px; background:#25d366; color:#fff; border:none; border-radius:30px; font-family:inherit; font-size:16px; font-weight:bold; cursor:pointer; box-shadow:0 6px 18px #25d36655; }
+  .form-note { text-align:center; color:#a39a83; font-size:12.5px; margin-top:10px; }
   details.faq summary { cursor:pointer; font-weight:bold; color:#4a4438; font-size:14.5px; list-style:none; }
   details.faq summary::-webkit-details-marker { display:none; }
   details.faq summary::before { content:"+"; color:#b98f2a; font-size:20px; margin-left:8px; }
@@ -79,6 +85,7 @@
   <div class="links">
     <a href="#services">خدمات</a>
     <a href="#work">نمونه‌کارها</a>
+    <a href="#request">ثبت درخواست</a>
     <a href="#faq">سوالات</a>
     <a href="#contact">تماس</a>
   </div>
@@ -128,6 +135,33 @@
     <p>کارگاه Allen مرجع تخصصی <strong>تعمیر دستگاه اسپرسو</strong> خانگی و صنعتی است. اگر اسپرسوسازت کرمای خوبی نمی‌دهد، بخار ضعیف شده یا دستگاه روشن نمی‌شود، ما عیب‌یابی دقیق انجام می‌دهیم؛ از <strong>سرویس و رسوب‌زدایی اسپرسوساز</strong> تا تعویض قطعات با نمونه اورجینال. همچنین <strong>فروش دستگاه اسپرسو</strong> خانگی و صنعتی را به‌صورت مستقیم از بندر گناوه انجام می‌دهیم. برای مشاوره و ثبت سفارش تعمیر با ما در تماس باشید.</p>
   </div>
 </section>
+<section id="request">
+  <h2>ثبت درخواست تعمیر</h2>
+  <div class="form-box">
+    <form id="reqForm">
+      <label>نام</label>
+      <input type="text" id="fName" required placeholder="نام شما">
+      <label>شماره تماس</label>
+      <input type="tel" id="fPhone" required placeholder="0912..." dir="ltr" style="text-align:right">
+      <label>مدل دستگاه</label>
+      <input type="text" id="fModel" placeholder="مثلاً اسپرسوساز صنعتی دو گروپ">
+      <label>شرح مشکل</label>
+      <textarea id="fIssue" required placeholder="مشکل دستگاه رو بنویسید..."></textarea>
+      <button type="submit">📩 ارسال درخواست در واتساپ</button>
+    </form>
+    <p class="form-note">درخواست شما مستقیم در واتساپ Allen باز می‌شود</p>
+  </div>
+</section>
+<script>
+document.getElementById('reqForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  var msg = '🔧 درخواست تعمیر جدید\n\nنام: ' + document.getElementById('fName').value +
+    '\nشماره تماس: ' + document.getElementById('fPhone').value +
+    '\nمدل دستگاه: ' + document.getElementById('fModel').value +
+    '\nشرح مشکل: ' + document.getElementById('fIssue').value;
+  window.open('https://wa.me/989183658664?text=' + encodeURIComponent(msg), '_blank');
+});
+</script>
 <section id="faq">
   <h2>سوالات متداول</h2>
   <details class="faq"><summary>آیا تعمیر در محل انجام می‌دهید؟</summary><p>خیر، تعمیر دستگاه فقط در کارگاه مجهز Allen انجام می‌شود تا عیب‌یابی دقیق و کامل صورت بگیرد.</p></details>
