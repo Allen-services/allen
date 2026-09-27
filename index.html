@@ -54,6 +54,20 @@
     text-align:center; padding:26px 16px; color:#7a6f57;
     font-size:13px; border-top:1px solid #221d14;
   }
+  .gallery { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+  .g-item {
+    background:#161310; border:1px solid #2c2517; border-radius:12px;
+    overflow:hidden; cursor:pointer;
+  }
+  .g-item img { width:100%; height:180px; object-fit:cover; display:block; }
+  .g-item p { padding:8px 10px; font-size:13px; color:#cfc4a8; text-align:center; }
+  #lightbox {
+    display:none; position:fixed; inset:0; z-index:50;
+    background:rgba(0,0,0,.92); align-items:center; justify-content:center;
+    padding:20px;
+  }
+  #lightbox.open { display:flex; }
+  #lightbox img { max-width:100%; max-height:90vh; border-radius:10px; border:1px solid #d4a437; }
 </style>
 </head>
 <body>
@@ -91,6 +105,19 @@
 </section>
 
 <section>
+  <h2>نمونه‌کارها</h2>
+  <div class="gallery">
+    <div class="g-item"><img src="gallery/work1.jpg" alt="سرویس بویلر" loading="lazy"><p>سرویس بویلر و لوله‌کشی مسی</p></div>
+    <div class="g-item"><img src="gallery/work2.jpg" alt="تعمیر داخلی دستگاه" loading="lazy"><p>تعمیر داخلی دستگاه صنعتی</p></div>
+    <div class="g-item"><img src="gallery/work3.jpg" alt="رسوب‌زدایی بویلر" loading="lazy"><p>رسوب‌زدایی بویلر</p></div>
+    <div class="g-item"><img src="gallery/work4.jpg" alt="سرویس دستگاه صنعتی" loading="lazy"><p>سرویس کامل دستگاه صنعتی</p></div>
+    <div class="g-item"><img src="gallery/work5.jpg" alt="سرویس بویلر و اتصالات" loading="lazy"><p>سرویس بویلر و اتصالات</p></div>
+    <div class="g-item"><img src="gallery/work6.jpg" alt="اورهال قطعات" loading="lazy"><p>اورهال و بازسازی قطعات</p></div>
+    <div class="g-item"><img src="gallery/work7.jpg" alt="تعمیر دستگاه" loading="lazy"><p>تعمیر تخصصی دستگاه صنعتی</p></div>
+  </div>
+</section>
+
+<section>
   <h2>تماس</h2>
   <div class="contact">
     <div class="row">📍 خمین، چهارراه قدس</div>
@@ -102,6 +129,14 @@
 <footer>
   Allen — تعمیرات تخصصی دستگاه اسپرسو ☕
 </footer>
+
+<div id="lightbox" onclick="this.classList.remove('open')"><img id="lb-img" src="" alt=""></div>
+<script>
+  const lb = document.getElementById('lightbox'), lbi = document.getElementById('lb-img');
+  document.querySelectorAll('.g-item img').forEach(im => {
+    im.addEventListener('click', () => { lbi.src = im.src; lb.classList.add('open'); });
+  });
+</script>
 
 </body>
 </html>
