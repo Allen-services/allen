@@ -29,24 +29,25 @@
   html { scroll-behavior:smooth; }
   body { font-family:Tahoma,"Segoe UI",sans-serif; background:#faf7f0; color:#2b2620; line-height:1.9; }
   nav { position:sticky; top:0; z-index:50; background:#fffdf7ee; backdrop-filter:blur(8px); border-bottom:1px solid #e8e0cf; padding:10px 18px; display:flex; align-items:center; justify-content:space-between; }
-  nav .logo { font-weight:bold; color:#b98f2a; font-size:18px; letter-spacing:2px; text-decoration:none; }
+  nav .logo { font-weight:bold; color:#b98f2a; font-size:18px; letter-spacing:2px; text-decoration:none; display:flex; align-items:center; gap:8px; }
   nav .links { display:none; }
   .menu-btn { background:none; border:1.5px solid #e8e0cf; border-radius:10px; font-size:22px; color:#4a4438; padding:4px 12px; cursor:pointer; font-family:inherit; }
   .menu-panel { display:none; position:absolute; top:100%; right:0; left:0; background:#fffdf7; border-bottom:1px solid #e8e0cf; box-shadow:0 12px 24px #0002; z-index:60; }
   .menu-panel.open { display:block; }
   .menu-panel a { display:block; padding:13px 22px; color:#4a4438; text-decoration:none; font-size:15px; border-top:1px solid #f0e9d8; }
-  .menu-panel a:hover { background:#faf7f0; color:#b98f2a; }
-  nav { position:sticky; }
-  .crumbs { text-align:center; font-size:12.5px; color:#a39a83; padding-top:18px; }
-  .crumbs span { margin:0 6px; }
-  .hero-k { text-align:center; padding:26px 20px 0; max-width:680px; margin:0 auto; }
-  .hero-k h1 { font-size:30px; color:#1d1a15; margin-bottom:10px; }
-  .hero-k .sub { color:#6b6252; font-size:15px; margin-bottom:20px; }
-  .order-btn { display:block; width:100%; max-width:420px; margin:0 auto; padding:16px; background:#1a7ab5; color:#fff; border-radius:14px; text-decoration:none; font-weight:bold; font-size:18px; text-align:center; box-shadow:0 8px 22px #1a7ab544; }
-  .trust { display:flex; gap:18px; justify-content:center; margin:16px 0 22px; flex-wrap:wrap; }
-  .trust span { color:#6b6252; font-size:13.5px; }
-  .trust b { color:#2e9e5b; }
-  .hero-img { max-width:680px; margin:0 auto; padding:0 22px; }
+  /* بنر تیره */
+  .banner { background:linear-gradient(135deg,#10182e 0%,#1b2542 60%,#232f52 100%); color:#f0e9d8; padding:44px 22px 38px; text-align:center; position:relative; overflow:hidden; }
+  .banner::after { content:""; position:absolute; left:-60px; bottom:-60px; width:220px; height:220px; background:#d4a437; opacity:.12; border-radius:50%; }
+  .banner .crumbs { font-size:12.5px; color:#9aa3b8; margin-bottom:14px; }
+  .banner .crumbs span { margin:0 6px; }
+  .banner h1 { font-size:28px; color:#f5c542; margin-bottom:10px; line-height:1.6; }
+  .banner .sub { color:#c9d1e3; font-size:14.5px; max-width:520px; margin:0 auto 20px; }
+  .banner .cta-row { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; position:relative; z-index:2; }
+  .btn-order { display:inline-block; padding:13px 40px; background:#f5c542; color:#10182e; border-radius:12px; text-decoration:none; font-weight:bold; font-size:16px; box-shadow:0 8px 22px #f5c54244; }
+  .btn-call { display:inline-block; padding:13px 34px; background:transparent; color:#f5c542; border:1.5px solid #f5c542; border-radius:12px; text-decoration:none; font-weight:bold; font-size:16px; }
+  .badges { display:flex; gap:8px; justify-content:center; flex-wrap:wrap; margin-top:22px; position:relative; z-index:2; }
+  .badges span { background:#ffffff14; border:1px solid #f5c54255; color:#f5c542; font-size:12.5px; padding:6px 14px; border-radius:20px; }
+  .hero-img { max-width:680px; margin:-6px auto 0; padding:0 22px; }
   .hero-img img { width:100%; border-radius:18px; box-shadow:0 10px 30px #b98f2a22; display:block; }
   section { max-width:680px; margin:0 auto; padding:40px 22px; }
   h2 { font-size:22px; text-align:center; margin-bottom:22px; color:#1d1a15; }
@@ -62,6 +63,12 @@
   .g-item p { padding:9px; font-size:13px; text-align:center; color:#6b6252; }
   .about { background:#fff; border:1px solid #ece4d2; border-radius:16px; padding:24px 22px; box-shadow:0 4px 14px #b98f2a11; }
   .about p { color:#5c5546; font-size:14.5px; text-align:justify; }
+  details.faq { background:#fff; border:1px solid #ece4d2; border-radius:12px; margin-bottom:10px; padding:14px 18px; box-shadow:0 2px 8px #b98f2a0d; }
+  details.faq summary { cursor:pointer; font-weight:bold; color:#4a4438; font-size:14.5px; list-style:none; }
+  details.faq summary::-webkit-details-marker { display:none; }
+  details.faq summary::before { content:"+"; color:#b98f2a; font-size:20px; margin-left:8px; }
+  details.faq[open] summary::before { content:"−"; }
+  details.faq p { color:#6b6252; font-size:13.5px; margin-top:8px; }
   .form-box { background:#fff; border:1px solid #ece4d2; border-radius:16px; padding:26px 22px; box-shadow:0 4px 14px #b98f2a11; }
   .form-box label { display:block; font-size:14px; color:#4a4438; margin:12px 0 4px; font-weight:bold; }
   .form-box input, .form-box textarea { width:100%; border:1.5px solid #e8e0cf; border-radius:10px; padding:10px 14px; font-family:inherit; font-size:14px; background:#fffdf7; color:#2b2620; }
@@ -69,26 +76,30 @@
   .form-box textarea { min-height:90px; resize:vertical; }
   .form-box button { width:100%; margin-top:16px; padding:13px; background:#25d366; color:#fff; border:none; border-radius:30px; font-family:inherit; font-size:16px; font-weight:bold; cursor:pointer; box-shadow:0 6px 18px #25d36655; }
   .form-note { text-align:center; color:#a39a83; font-size:12.5px; margin-top:10px; }
-  details.faq summary { cursor:pointer; font-weight:bold; color:#4a4438; font-size:14.5px; list-style:none; }
-  details.faq summary::-webkit-details-marker { display:none; }
-  details.faq summary::before { content:"+"; color:#b98f2a; font-size:20px; margin-left:8px; }
-  details.faq[open] summary::before { content:"−"; }
-  details.faq p { color:#6b6252; font-size:13.5px; margin-top:8px; }
   .contact { background:#1d1a15; color:#f0e9d8; border-radius:20px; padding:30px 20px; text-align:center; }
   .contact h2 { color:#f0e9d8; }
   .contact .row { margin:12px 0; font-size:17px; }
   .contact a { color:#d4a437; text-decoration:none; }
-  .float-btns { position:fixed; bottom:18px; left:18px; z-index:60; display:flex; flex-direction:column; gap:10px; }
-  .float-btns a { width:54px; height:54px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:26px; text-decoration:none; box-shadow:0 6px 18px #0003; }
-  .float-btns .call { background:#b98f2a; }
-  .float-btns .wa { background:#25d366; }
-  footer { text-align:center; padding:26px 16px 90px; color:#a39a83; font-size:13px; }
+  /* ویجت مشاوره */
+  .chat-bubble { position:fixed; bottom:86px; left:16px; z-index:70; width:58px; height:58px; border-radius:50%; background:#f5a623; border:none; font-size:28px; cursor:pointer; box-shadow:0 8px 22px #0004; font-family:inherit; }
+  .chat-box { display:none; position:fixed; bottom:152px; left:16px; z-index:70; width:280px; background:#fff; border-radius:16px; box-shadow:0 14px 40px #0004; overflow:hidden; }
+  .chat-box.open { display:block; }
+  .chat-box .chead { background:#10182e; color:#f5c542; padding:12px 16px; font-weight:bold; font-size:14px; display:flex; justify-content:space-between; align-items:center; }
+  .chat-box .chead button { background:none; border:none; color:#9aa3b8; font-size:18px; cursor:pointer; font-family:inherit; }
+  .chat-box .cbody { padding:16px; font-size:13.5px; color:#4a4438; }
+  .chat-box .cbody a { display:block; text-align:center; margin-top:12px; padding:11px; background:#25d366; color:#fff; border-radius:10px; text-decoration:none; font-weight:bold; }
+  /* منوی پایین */
+  .bottom-nav { position:fixed; bottom:0; right:0; left:0; z-index:60; background:#fffdf7; border-top:1px solid #e8e0cf; display:flex; box-shadow:0 -6px 18px #0001; }
+  .bottom-nav a { flex:1; text-align:center; padding:9px 4px 10px; text-decoration:none; color:#6b6252; font-size:11.5px; }
+  .bottom-nav a .bi { display:block; font-size:21px; margin-bottom:2px; }
+  .bottom-nav a.active { color:#b98f2a; font-weight:bold; }
+  footer { text-align:center; padding:26px 16px 110px; color:#a39a83; font-size:13px; }
   footer .flinks a { color:#8a6d1f; text-decoration:none; margin:0 8px; font-size:13px; }
 </style>
 </head>
 <body>
 <nav>
-  <a class="logo" href="#top" style="display:flex;align-items:center;gap:8px"><img src="logo.jpg" alt="Allen" style="width:36px;height:36px;border-radius:10px;border:2px solid #d4a437">Allen</a>
+  <a class="logo" href="#top"><img src="logo.jpg" alt="Allen" style="width:36px;height:36px;border-radius:10px;border:2px solid #d4a437">Allen</a>
   <button class="menu-btn" id="menuBtn" aria-label="منو">☰</button>
   <div class="menu-panel" id="menuPanel">
     <a href="#services">خدمات ما</a>
@@ -98,22 +109,18 @@
     <a href="#contact">تماس با ما</a>
   </div>
 </nav>
-<script>
-document.getElementById('menuBtn').addEventListener('click', function(){
-  document.getElementById('menuPanel').classList.toggle('open');
-});
-document.querySelectorAll('#menuPanel a').forEach(function(a){
-  a.addEventListener('click', function(){ document.getElementById('menuPanel').classList.remove('open'); });
-});
-</script>
-<div class="crumbs"><span>Allen</span>‹<span>خمین</span>‹<span>تعمیر اسپرسوساز</span></div>
-<div class="hero-k" id="top">
-  <h1>تعمیر اسپرسوساز</h1>
-  <p class="sub">با ثبت جزئیات درخواست خود، بهترین خدمات تعمیر اسپرسوساز خانگی و صنعتی را دریافت کنید</p>
-  <a class="order-btn" href="#request">ثبت سفارش</a>
-  <div class="trust">
-    <span><b>✓</b> دریافت رایگان قیمت</span>
-    <span><b>✓</b> ثبت آسان و سریع سفارش</span>
+<div class="banner" id="top">
+  <div class="crumbs"><span>Allen</span>‹<span>تعمیر اسپرسوساز</span></div>
+  <h1>تعمیر قهوه‌ساز و اسپرسوساز</h1>
+  <p class="sub">تعمیر تخصصی اسپرسوساز خانگی و صنعتی در کارگاه مجهز Allen — سرویس، رسوب‌زدایی، قطعات اورجینال و فروش دستگاه</p>
+  <div class="cta-row">
+    <a class="btn-order" href="#request">ثبت سفارش</a>
+    <a class="btn-call" href="tel:09183658664">📞 تماس</a>
+  </div>
+  <div class="badges">
+    <span>⚙️ قطعات اورجینال</span>
+    <span>🚢 فروش مستقیم از بندر گناوه</span>
+    <span>🏭 تعمیر در کارگاه مجهز</span>
   </div>
 </div>
 <div class="hero-img">
@@ -172,16 +179,6 @@ document.querySelectorAll('#menuPanel a').forEach(function(a){
     <p class="form-note">درخواست شما مستقیم در واتساپ Allen باز می‌شود</p>
   </div>
 </section>
-<script>
-document.getElementById('reqForm').addEventListener('submit', function(e){
-  e.preventDefault();
-  var msg = '🔧 درخواست تعمیر جدید\n\nنام: ' + document.getElementById('fName').value +
-    '\nشماره تماس: ' + document.getElementById('fPhone').value +
-    '\nمدل دستگاه: ' + document.getElementById('fModel').value +
-    '\nشرح مشکل: ' + document.getElementById('fIssue').value;
-  window.open('https://wa.me/989052739235?text=' + encodeURIComponent(msg), '_blank');
-});
-</script>
 <section id="faq">
   <h2>سوالات متداول</h2>
   <details class="faq"><summary>آیا تعمیر در محل انجام می‌دهید؟</summary><p>خیر، تعمیر دستگاه فقط در کارگاه مجهز Allen انجام می‌شود تا عیب‌یابی دقیق و کامل صورت بگیرد.</p></details>
@@ -198,13 +195,46 @@ document.getElementById('reqForm').addEventListener('submit', function(e){
     <div class="row">📸 <a href="https://instagram.com/allen__services" dir="ltr">@allen__services</a></div>
   </div>
 </section>
-<div class="float-btns">
-  <a class="wa" href="https://wa.me/989052739235" aria-label="واتساپ">💬</a>
-  <a class="call" href="tel:09183658664" aria-label="تماس">📞</a>
+<button class="chat-bubble" id="chatBubble" aria-label="مشاوره آنلاین">💬</button>
+<div class="chat-box" id="chatBox">
+  <div class="chead"><span>مشاوره آنلاین Allen</span><button id="chatClose" aria-label="بستن">✕</button></div>
+  <div class="cbody">
+    سلام! 👋 سوالی درباره تعمیر اسپرسوساز داری؟ در خدمتم.
+    <a href="https://wa.me/989052739235?text=%D8%B3%D9%84%D8%A7%D9%85%D8%8C%20%D9%85%D8%B4%D8%A7%D9%88%D8%B1%D9%87%20%D9%85%DB%8C%E2%80%8C%D8%AE%D9%88%D8%A7%D9%85">شروع گفتگو در واتساپ</a>
+  </div>
+</div>
+<div class="bottom-nav">
+  <a href="#top" class="active"><span class="bi">🏠</span>خانه</a>
+  <a href="#request"><span class="bi">🧾</span>ثبت درخواست</a>
+  <a href="tel:09183658664"><span class="bi">📞</span>تماس</a>
+  <a href="https://wa.me/989052739235"><span class="bi">💬</span>واتساپ</a>
 </div>
 <footer>
   <div class="flinks"><a href="#services">خدمات</a><a href="#work">نمونه‌کارها</a><a href="#faq">سوالات متداول</a><a href="#contact">تماس</a></div>
   <p style="margin-top:10px">Allen — تعمیرات تخصصی دستگاه اسپرسو ☕</p>
 </footer>
+<script>
+document.getElementById('menuBtn').addEventListener('click', function(){
+  document.getElementById('menuPanel').classList.toggle('open');
+});
+document.querySelectorAll('#menuPanel a').forEach(function(a){
+  a.addEventListener('click', function(){ document.getElementById('menuPanel').classList.remove('open'); });
+});
+document.getElementById('reqForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  var msg = '🔧 درخواست تعمیر جدید\n\nنام: ' + document.getElementById('fName').value +
+    '\nشماره تماس: ' + document.getElementById('fPhone').value +
+    '\nمدل دستگاه: ' + document.getElementById('fModel').value +
+    '\nشرح مشکل: ' + document.getElementById('fIssue').value;
+  window.open('https://wa.me/989052739235?text=' + encodeURIComponent(msg), '_blank');
+});
+var chatBox = document.getElementById('chatBox');
+document.getElementById('chatBubble').addEventListener('click', function(){
+  chatBox.classList.toggle('open');
+});
+document.getElementById('chatClose').addEventListener('click', function(){
+  chatBox.classList.remove('open');
+});
+</script>
 </body>
 </html>
