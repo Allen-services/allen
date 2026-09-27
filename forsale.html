@@ -206,6 +206,16 @@
   .fs-note{background:var(--bg2);border:1px dashed var(--gold);border-radius:12px;padding:10px 16px;font-size:13.5px;color:var(--mut);margin-bottom:18px}
   .fs-body .btn{width:100%;text-align:center}
   .back-link{display:inline-block;margin-bottom:18px;color:var(--gold);text-decoration:none;font-size:14.5px}
+
+  /* ===== افکت‌های ظاهری ===== */
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .65s ease,transform .65s cubic-bezier(.22,.61,.36,1)}
+  .reveal.visible{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){.reveal{opacity:1!important;transform:none!important;transition:none}}
+  .btn-gold{position:relative;overflow:hidden}
+  .btn-gold::after{content:"";position:absolute;top:0;bottom:0;width:45%;left:-70%;background:linear-gradient(105deg,transparent,#ffffff59,transparent);transform:skewX(-20deg);transition:left .55s ease}
+  .btn-gold:hover::after{left:140%}
+  .site-header{box-shadow:0 6px 26px #0000002e}
+  .fs-card{will-change:transform}
 </style>
 </head>
 <body>
@@ -304,6 +314,25 @@ setTheme(savedTheme);
 themeBtn.addEventListener('click', function(){
   setTheme(document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
 });
+// افکت ظاهر شدن کارت‌ها موقع اسکرول
+(function(){
+  var els = document.querySelectorAll('.fs-card,.sec-head,.contact-card,.fs-note');
+  els.forEach(function(el){ el.classList.add('reveal'); });
+  if(!('IntersectionObserver' in window)){ els.forEach(function(el){ el.classList.add('visible'); }); return; }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if(en.isIntersecting){
+        var el = en.target;
+        var sibs = Array.prototype.filter.call(el.parentNode.children, function(c){ return c.classList.contains('reveal'); });
+        var i = sibs.indexOf(el);
+        el.style.transitionDelay = Math.min(Math.max(i,0),8)*70 + 'ms';
+        el.classList.add('visible');
+        io.unobserve(el);
+      }
+    });
+  }, {threshold:.1});
+  els.forEach(function(el){ io.observe(el); });
+})();
 </script>
 </body>
 </html>
