@@ -227,6 +227,26 @@
   .chat-box{backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px)}
   .site-header{box-shadow:0 6px 26px #0000002e}
   .card,.product,.g-item{will-change:transform}
+
+  /* ===== پولیش بصری ===== */
+  ::selection{background:var(--gold);color:#1c1409}
+  ::-webkit-scrollbar{width:10px}
+  ::-webkit-scrollbar-track{background:var(--bg)}
+  ::-webkit-scrollbar-thumb{background:var(--brown);border-radius:8px}
+  main>section:not(.hero){position:relative}
+  main>section:not(.hero)::before{content:"";display:block;width:130px;height:2px;margin:0 auto 34px;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:.55;border-radius:2px}
+  .sec-head h2{position:relative;display:inline-block;padding-bottom:12px}
+  .sec-head h2::after{content:"";position:absolute;right:50%;transform:translateX(50%);bottom:0;width:66px;height:3px;border-radius:3px;background:linear-gradient(90deg,var(--gold2),var(--gold))}
+  .card:hover{border-color:var(--gold)}
+  .product:hover{border-color:var(--gold);box-shadow:0 14px 30px #0007}
+  .g-item:hover{border-color:var(--gold)}
+  .g-item img{filter:saturate(1.05)}
+  .product .pimg{background:linear-gradient(135deg,var(--bg2),var(--card2))}
+  .hero-bg{will-change:transform}
+  .to-top{position:fixed;bottom:86px;right:16px;z-index:70;width:48px;height:48px;border-radius:50%;background:var(--card);border:1.5px solid var(--gold);color:var(--gold);font-size:20px;cursor:pointer;font-family:inherit;opacity:0;pointer-events:none;transition:opacity .3s,transform .2s;box-shadow:0 8px 22px #0007}
+  .to-top.show{opacity:1;pointer-events:auto}
+  .to-top:hover{transform:translateY(-3px)}
+  .form-card input:focus,.form-card textarea:focus{box-shadow:0 0 0 3px #e0a83c33}
 </style>
 </head>
 <body>
@@ -480,6 +500,7 @@
 </footer>
 
 <!-- ===== چت‌بات ===== -->
+<button class="to-top" id="toTop" aria-label="بازگشت به بالا">↑</button>
 <button class="chat-bubble" id="chatBubble" aria-label="مشاوره آنلاین">💬</button>
 <div class="chat-box" id="chatBox" role="dialog" aria-label="گفتگو با دستیار Allenservice">
   <div class="chead"><span>🤖 دستیار Allenservice</span><button id="chatClose" aria-label="بستن">✕</button></div>
@@ -606,6 +627,22 @@ document.querySelectorAll('#chatQuick button').forEach(function(b){
     });
   }, {threshold:.1});
   els.forEach(function(el){ io.observe(el); });
+})();
+// پارالاکس نرم هیرو + دکمه بازگشت به بالا
+(function(){
+  var heroBg = document.querySelector('.hero-bg');
+  var toTop = document.getElementById('toTop');
+  var ticking = false;
+  function onScroll(){
+    var y = window.scrollY || window.pageYOffset;
+    if(heroBg && y < 700){ heroBg.style.transform = 'translateY(' + (y * .22) + 'px)'; }
+    if(toTop){ toTop.classList.toggle('show', y > 600); }
+    ticking = false;
+  }
+  window.addEventListener('scroll', function(){
+    if(!ticking){ requestAnimationFrame(onScroll); ticking = true; }
+  }, {passive:true});
+  if(toTop){ toTop.addEventListener('click', function(){ window.scrollTo({top:0, behavior:'smooth'}); }); }
 })();
 </script>
 </body>
