@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://allen-services.github.io/allen/sitemap.xml
