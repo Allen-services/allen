@@ -216,6 +216,21 @@
   .btn-gold:hover::after{left:140%}
   .site-header{box-shadow:0 6px 26px #0000002e}
   .fs-card{will-change:transform}
+
+  /* ===== پولیش بصری ===== */
+  ::selection{background:var(--gold);color:#1c1409}
+  ::-webkit-scrollbar{width:10px}
+  ::-webkit-scrollbar-track{background:var(--bg)}
+  ::-webkit-scrollbar-thumb{background:var(--brown);border-radius:8px}
+  main>section{position:relative}
+  main>section::before{content:"";display:block;width:130px;height:2px;margin:0 auto 34px;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:.55;border-radius:2px}
+  .sec-head h2{position:relative;display:inline-block;padding-bottom:12px}
+  .sec-head h2::after{content:"";position:absolute;right:50%;transform:translateX(50%);bottom:0;width:66px;height:3px;border-radius:3px;background:linear-gradient(90deg,var(--gold2),var(--gold))}
+  .fs-card:hover{border-color:var(--gold);box-shadow:0 14px 30px #0007;transform:translateY(-4px)}
+  .fs-card{transition:transform .18s,border-color .18s,box-shadow .18s}
+  .to-top{position:fixed;bottom:86px;right:16px;z-index:70;width:48px;height:48px;border-radius:50%;background:var(--card);border:1.5px solid var(--gold);color:var(--gold);font-size:20px;cursor:pointer;font-family:inherit;opacity:0;pointer-events:none;transition:opacity .3s,transform .2s;box-shadow:0 8px 22px #0007}
+  .to-top.show{opacity:1;pointer-events:auto}
+  .to-top:hover{transform:translateY(-3px)}
 </style>
 </head>
 <body>
@@ -300,6 +315,7 @@
   <a href="tel:09183658664"><span class="bi">📞</span>تماس</a>
   <a href="https://wa.me/989052739235"><span class="bi">💬</span>واتساپ</a>
 </nav>
+<button class="to-top" id="toTop" aria-label="بازگشت به بالا">↑</button>
 
 <script>
 var themeBtn = document.getElementById('themeBtn');
@@ -332,6 +348,15 @@ themeBtn.addEventListener('click', function(){
     });
   }, {threshold:.1});
   els.forEach(function(el){ io.observe(el); });
+})();
+// دکمه بازگشت به بالا
+(function(){
+  var toTop = document.getElementById('toTop');
+  window.addEventListener('scroll', function(){
+    var y = window.scrollY || window.pageYOffset;
+    if(toTop){ toTop.classList.toggle('show', y > 600); }
+  }, {passive:true});
+  if(toTop){ toTop.addEventListener('click', function(){ window.scrollTo({top:0, behavior:'smooth'}); }); }
 })();
 </script>
 </body>
