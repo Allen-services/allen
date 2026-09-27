@@ -210,6 +210,23 @@
   .bottom-nav a{flex:1;text-align:center;padding:9px 4px 10px;text-decoration:none;color:var(--mut);font-size:11.5px}
   .bottom-nav a .bi{display:block;font-size:21px;margin-bottom:2px}
   .bottom-nav a.active{color:var(--gold);font-weight:bold}
+
+  /* ===== افکت‌های ظاهری ===== */
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .65s ease,transform .65s cubic-bezier(.22,.61,.36,1)}
+  .reveal.visible{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){.reveal{opacity:1!important;transform:none!important;transition:none}}
+  .hero .wrap>*{animation:heroIn .8s cubic-bezier(.22,.61,.36,1) both}
+  .hero .wrap>*:nth-child(2){animation-delay:.08s}
+  .hero .wrap>*:nth-child(3){animation-delay:.16s}
+  .hero .wrap>*:nth-child(4){animation-delay:.24s}
+  .hero .wrap>*:nth-child(5){animation-delay:.32s}
+  @keyframes heroIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+  .btn-gold{position:relative;overflow:hidden}
+  .btn-gold::after{content:"";position:absolute;top:0;bottom:0;width:45%;left:-70%;background:linear-gradient(105deg,transparent,#ffffff59,transparent);transform:skewX(-20deg);transition:left .55s ease}
+  .btn-gold:hover::after{left:140%}
+  .chat-box{backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px)}
+  .site-header{box-shadow:0 6px 26px #0000002e}
+  .card,.product,.g-item{will-change:transform}
 </style>
 </head>
 <body>
@@ -570,6 +587,26 @@ document.getElementById('chatText').addEventListener('keydown', function(e){
 document.querySelectorAll('#chatQuick button').forEach(function(b){
   b.addEventListener('click', function(){ botSay(b.getAttribute('data-q')); });
 });
+// افکت ظاهر شدن کارت‌ها موقع اسکرول
+(function(){
+  var els = document.querySelectorAll('.card,.product,.g-item,.step,.sec-head,.about-card,.form-card,.contact-card');
+  els.forEach(function(el){ el.classList.add('reveal'); });
+  function showAll(){ els.forEach(function(el){ el.classList.add('visible'); }); }
+  if(!('IntersectionObserver' in window)){ showAll(); return; }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if(en.isIntersecting){
+        var el = en.target;
+        var sibs = Array.prototype.filter.call(el.parentNode.children, function(c){ return c.classList.contains('reveal'); });
+        var i = sibs.indexOf(el);
+        el.style.transitionDelay = Math.min(Math.max(i,0),8)*70 + 'ms';
+        el.classList.add('visible');
+        io.unobserve(el);
+      }
+    });
+  }, {threshold:.1});
+  els.forEach(function(el){ io.observe(el); });
+})();
 </script>
 </body>
 </html>
