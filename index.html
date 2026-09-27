@@ -32,15 +32,17 @@
   nav .logo { font-weight:bold; color:#b98f2a; font-size:18px; letter-spacing:2px; text-decoration:none; }
   nav .links a { color:#4a4438; text-decoration:none; font-size:13.5px; margin-right:16px; }
   nav .links a:hover { color:#b98f2a; }
-  .hero { text-align:center; padding:64px 20px 46px; background:linear-gradient(180deg,#fffdf7,#faf7f0); border-bottom:1px solid #e8e0cf; }
-  .hero img { width:150px; border-radius:22px; margin-bottom:16px; box-shadow:0 10px 30px #b98f2a33; border:3px solid #d4a437; }
-  .hero h1 { font-size:40px; letter-spacing:5px; color:#1d1a15; }
-  .hero h1 .brand { color:#b98f2a; display:block; }
-  .hero h1 .kw { display:block; font-size:19px; letter-spacing:0; color:#4a4438; margin-top:6px; font-weight:normal; }
-  .hero .tag { color:#6b6252; margin-top:8px; }
-  .cta-row { margin-top:24px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
-  .cta { display:inline-block; padding:12px 34px; background:#b98f2a; color:#fff; border-radius:30px; text-decoration:none; font-weight:bold; box-shadow:0 6px 18px #b98f2a55; }
-  .cta.ghost { background:#fff; color:#b98f2a; border:1.5px solid #b98f2a; box-shadow:none; }
+  .crumbs { text-align:center; font-size:12.5px; color:#a39a83; padding-top:18px; }
+  .crumbs span { margin:0 6px; }
+  .hero-k { text-align:center; padding:26px 20px 0; max-width:680px; margin:0 auto; }
+  .hero-k h1 { font-size:30px; color:#1d1a15; margin-bottom:10px; }
+  .hero-k .sub { color:#6b6252; font-size:15px; margin-bottom:20px; }
+  .order-btn { display:block; width:100%; max-width:420px; margin:0 auto; padding:16px; background:#1a7ab5; color:#fff; border-radius:14px; text-decoration:none; font-weight:bold; font-size:18px; text-align:center; box-shadow:0 8px 22px #1a7ab544; }
+  .trust { display:flex; gap:18px; justify-content:center; margin:16px 0 22px; flex-wrap:wrap; }
+  .trust span { color:#6b6252; font-size:13.5px; }
+  .trust b { color:#2e9e5b; }
+  .hero-img { max-width:680px; margin:0 auto; padding:0 22px; }
+  .hero-img img { width:100%; border-radius:18px; box-shadow:0 10px 30px #b98f2a22; display:block; }
   section { max-width:680px; margin:0 auto; padding:40px 22px; }
   h2 { font-size:22px; text-align:center; margin-bottom:22px; color:#1d1a15; }
   h2::after { content:""; display:block; width:52px; height:3px; background:#d4a437; border-radius:2px; margin:8px auto 0; }
@@ -81,7 +83,7 @@
 </head>
 <body>
 <nav>
-  <a class="logo" href="#top">Allen</a>
+  <a class="logo" href="#top" style="display:flex;align-items:center;gap:8px"><img src="logo.jpg" alt="Allen" style="width:36px;height:36px;border-radius:10px;border:2px solid #d4a437">Allen</a>
   <div class="links">
     <a href="#services">خدمات</a>
     <a href="#work">نمونه‌کارها</a>
@@ -90,14 +92,18 @@
     <a href="#contact">تماس</a>
   </div>
 </nav>
-<div class="hero" id="top">
-  <img src="logo.jpg" alt="Allen">
-  <h1><span class="brand">Allen</span><span class="kw">تعمیرات تخصصی دستگاه اسپرسو</span></h1>
-  <p class="tag">تعمیر اسپرسوساز خانگی و صنعتی — سرویس، رسوب‌زدایی و قطعات اورجینال</p>
-  <div class="cta-row">
-    <a class="cta" href="tel:09183658664">📞 تماس</a>
-    <a class="cta ghost" href="https://instagram.com/allen__services">اینستاگرام</a>
+<div class="crumbs"><span>Allen</span>‹<span>خمین</span>‹<span>تعمیر اسپرسوساز</span></div>
+<div class="hero-k" id="top">
+  <h1>تعمیر اسپرسوساز در خمین</h1>
+  <p class="sub">با ثبت جزئیات درخواست خود، بهترین خدمات تعمیر اسپرسوساز خانگی و صنعتی را دریافت کنید</p>
+  <a class="order-btn" href="#request">ثبت سفارش</a>
+  <div class="trust">
+    <span><b>✓</b> دریافت رایگان قیمت</span>
+    <span><b>✓</b> ثبت آسان و سریع سفارش</span>
   </div>
+</div>
+<div class="hero-img">
+  <img src="gallery/work4.jpg" alt="تعمیر دستگاه اسپرسو صنعتی در کارگاه Allen">
 </div>
 <section id="services">
   <h2>خدمات ما</h2>
