@@ -3,7 +3,14 @@
   Allenservice — قالب قهوه‌ای (نسخه HTML)
   ساختار تمیز و معنایی؛ آماده تبدیل به قالب وردپرس:
   header.php → <header class="site-header"> تا پایان </header>
-  front-page.php → <main> ... </main>
+  front-page.php → <main> ... <div class="wrap" style="padding-top:6px;padding-bottom:44px"><div class="cbox">
+      <h2>نظرت رو بنویس</h2>
+      <p>نظرت درباره Allenservice رو بنویس، مستقیم میاد واتساپ ما</p>
+      <input id="cname" type="text" placeholder="اسمت" maxlength="40">
+      <textarea id="ctext" placeholder="نظرت..." maxlength="500"></textarea>
+      <button class="btn btn-gold" id="csend">ارسال نظر در واتساپ</button>
+    </div></div>
+</main>
   footer.php → <footer class="site-footer"> تا پایان بادی
 -->
 <html lang="fa" dir="rtl" data-theme="dark">
@@ -309,6 +316,13 @@
 
   svg.ph{fill:var(--gold,#b57e1e);width:1.15em;height:1.15em;vertical-align:-.18em}
   .num-ic svg.ph{width:38px;height:38px;vertical-align:0}
+  .cbox{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px;margin-top:10px}
+  .cbox h2{font-size:18px;margin-bottom:4px}
+  .cbox p{font-size:13px;color:var(--mut);margin-bottom:14px}
+  .cbox input,.cbox textarea{width:100%;background:#ffffff08;border:1px solid var(--line);border-radius:12px;color:var(--ink);font-family:inherit;font-size:14px;padding:11px 13px;margin-bottom:10px}
+  .cbox input::placeholder,.cbox textarea::placeholder{color:var(--mut)}
+  .cbox textarea{min-height:90px;resize:vertical}
+  .cbox .btn{width:100%}
 </style>
 </head>
 <body>
@@ -1138,5 +1152,13 @@ document.querySelectorAll('#chatQuick button').forEach(function(b){
 })();
 </script>
 
+<script>
+document.getElementById('csend').addEventListener('click',function(){
+  var n=document.getElementById('cname').value.trim()||'بدون اسم';
+  var t=document.getElementById('ctext').value.trim();
+  if(!t){document.getElementById('ctext').focus();return;}
+  window.open('https://wa.me/989052739235?text='+encodeURIComponent('نظر درباره Allenservice\nنام: '+n+'\nنظر: '+t),'_blank');
+});
+</script>
 </body>
 </html>
