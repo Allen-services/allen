@@ -870,6 +870,69 @@
 </main>
 
 <!-- ===== فوتر سایت ===== -->
+
+<section class="comments-sec"><div class="wrap">
+<!-- ویجت نظرات عمومی — جای https://qbweesuowmcxgkpwunvs.supabase.co و eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFid2Vlc3Vvd21jeGdrcHd1bnZzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTA1OTA1NTMsImV4cCI6MjEwNjE2NjU1M30.L411x8yI2G2MFDOGjejLExXqCJkx8JHhpNBkTwwEKp8 گذاشته می‌شود -->
+<div class="cbox" id="cbox">
+  <h2>نظرات</h2>
+  <div id="clist"><p style="opacity:.6">در حال بارگذاری نظرها…</p></div>
+  <input id="cname" maxlength="40" placeholder="اسمت" style="width:100%;margin:8px 0;padding:10px;border-radius:8px;border:1px solid #5a4632;background:#241a12;color:#f5ead9">
+  <textarea id="ctext" maxlength="500" rows="3" placeholder="نظرت رو بنویس…" style="width:100%;margin:8px 0;padding:10px;border-radius:8px;border:1px solid #5a4632;background:#241a12;color:#f5ead9"></textarea>
+  <input id="cbot" type="text" style="display:none" tabindex="-1" autocomplete="off">
+  <button class="btn btn-gold" id="csend">ارسال نظر</button>
+</div>
+<script>
+(function(){
+  var URL = "https://qbweesuowmcxgkpwunvs.supabase.co", KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFid2Vlc3Vvd21jeGdrcHd1bnZzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTA1OTA1NTMsImV4cCI6MjEwNjE2NjU1M30.L411x8yI2G2MFDOGjejLExXqCJkx8JHhpNBkTwwEKp8";
+  var page = location.pathname.split("/").pop() || "index.html";
+  var list = document.getElementById("clist");
+  function esc(s){ return s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;"); }
+  function faDate(iso){
+    try { return new Date(iso).toLocaleDateString("fa-IR", {year:"numeric",month:"long",day:"numeric"}); }
+    catch(e){ return ""; }
+  }
+  function load(){
+    fetch(URL + "/rest/v1/comments?select=name,body,created_at&page=eq." + encodeURIComponent(page) + "&order=created_at.desc&limit=50",
+      {headers: {"apikey": KEY, "Authorization": "Bearer " + KEY}})
+    .then(function(r){ return r.json(); })
+    .then(function(rows){
+      if(!rows.length){ list.innerHTML = "<p style='opacity:.6'>هنوز نظری ثبت نشده؛ اولین نظر رو تو بنویس</p>"; return; }
+      list.innerHTML = rows.map(function(c){
+        return "<div style='border:1px solid #5a4632;border-radius:10px;padding:10px;margin:8px 0;background:#2b2016'>"
+          + "<div style='color:#d9a441;font-weight:700'>" + esc(c.name)
+          + " <span style='opacity:.55;font-weight:400;font-size:12px'>" + faDate(c.created_at) + "</span></div>"
+          + "<div style='margin-top:6px;white-space:pre-wrap'>" + esc(c.body) + "</div></div>";
+      }).join("");
+    })
+    .catch(function(){ list.innerHTML = "<p style='opacity:.6'>فعلاً نظرها لود نشدن</p>"; });
+  }
+  document.getElementById("csend").addEventListener("click", function(){
+    var name = document.getElementById("cname").value.trim();
+    var body = document.getElementById("ctext").value.trim();
+    if(document.getElementById("cbot").value) return;
+    if(name.length < 2){ alert("اسمت رو بنویس"); return; }
+    if(body.length < 2){ alert("متن نظر رو بنویس"); return; }
+    var last = +(localStorage.getItem("csend_at") || 0);
+    if(Date.now() - last < 60000){ alert("یه دقیقه صبر کن بعد دوباره بفرست"); return; }
+    var btn = this; btn.disabled = true;
+    fetch(URL + "/rest/v1/comments", {
+      method: "POST",
+      headers: {"apikey": KEY, "Authorization": "Bearer " + KEY,
+                "Content-Type": "application/json", "Prefer": "return=minimal"},
+      body: JSON.stringify({page: page, name: name, body: body})
+    }).then(function(r){
+      if(!r.ok) throw 0;
+      localStorage.setItem("csend_at", Date.now());
+      document.getElementById("ctext").value = "";
+      load();
+    }).catch(function(){ alert("ارسال نشد؛ دوباره تلاش کن"); })
+    .finally(function(){ btn.disabled = false; });
+  });
+  load();
+})();
+</script>
+
+</div></section>
 <footer class="site-footer">
   <div class="wrap">
     <div>
