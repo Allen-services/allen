@@ -270,6 +270,13 @@
   .pcard .pprice{font-size:16px;font-weight:bold;color:var(--gold2);margin:6px 0 10px}
   [data-theme="light"] .pcard .pprice{color:var(--gold)}
   .pcard .btn{font-size:13px;padding:9px 12px;width:100%}
+  .cbox{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px;margin-top:34px}
+  .cbox h2{font-size:18px;margin-bottom:4px}
+  .cbox p{font-size:13px;color:var(--mut);margin-bottom:14px}
+  .cbox input,.cbox textarea{width:100%;background:#ffffff08;border:1px solid var(--line);border-radius:12px;color:var(--ink);font-family:inherit;font-size:14px;padding:11px 13px;margin-bottom:10px}
+  .cbox input::placeholder,.cbox textarea::placeholder{color:var(--mut)}
+  .cbox textarea{min-height:90px;resize:vertical}
+  .cbox .btn{width:100%}
   .rate{display:flex;align-items:center;justify-content:center;gap:6px;margin-top:10px;font-size:12px;color:var(--mut)}
   .rate .stars{display:inline-flex;flex-direction:row-reverse;gap:2px}
   .rate .stars button{background:none;border:none;font-size:19px;color:#5a4a33;cursor:pointer;padding:0 1px;transition:color .15s,transform .15s;line-height:1}
@@ -579,6 +586,13 @@
           </div>
         </article>
       </div>
+    <div class="cbox">
+        <h2>نظرت رو بنویس</h2>
+        <p>نظرت درباره قطعات Allenservice رو بنویس، مستقیم میاد واتساپ ما</p>
+        <input id="cname" type="text" placeholder="اسمت" maxlength="40">
+        <textarea id="ctext" placeholder="نظرت..." maxlength="500"></textarea>
+        <button class="btn btn-gold" id="csend">ارسال نظر در واتساپ</button>
+      </div>
     </div>
   </section>
 
@@ -742,6 +756,14 @@ document.querySelectorAll('.rate .stars button').forEach(function(b){
     var name=b.closest('.rate').dataset.name, s=b.dataset.s;
     window.open('https://wa.me/989052739235?text='+encodeURIComponent('به قطعه «'+name+'» '+s+' از ۵ ستاره می‌دم'),'_blank');
   });
+});
+</script>
+<script>
+document.getElementById('csend').addEventListener('click',function(){
+  var n=document.getElementById('cname').value.trim()||'بدون اسم';
+  var t=document.getElementById('ctext').value.trim();
+  if(!t){document.getElementById('ctext').focus();return;}
+  window.open('https://wa.me/989052739235?text='+encodeURIComponent('نظر درباره قطعات Allenservice\nنام: '+n+'\nنظر: '+t),'_blank');
 });
 </script>
 </body>
