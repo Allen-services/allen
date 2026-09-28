@@ -587,12 +587,24 @@
         </article>
       </div>
     <div class="cbox">
-        <h2>نظرت رو بنویس</h2>
-        <p>نظرت درباره قطعات Allenservice رو بنویس، مستقیم میاد واتساپ ما</p>
-        <input id="cname" type="text" placeholder="اسمت" maxlength="40">
-        <textarea id="ctext" placeholder="نظرت..." maxlength="500"></textarea>
-        <button class="btn btn-gold" id="csend">ارسال نظر در واتساپ</button>
-      </div>
+      <h2>نظرات</h2>
+      <p>نظرت رو بنویس؛ برای همه نمایش داده می‌شه</p>
+      <script src="https://giscus.app/client.js"
+        data-repo="allen-services/allen"
+        data-repo-id="R_kgDOUuRxfA"
+        data-category="General"
+        data-category-id="DIC_kwDOUuRxfM4DGk9z"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="dark"
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
+</script>
+    </div>
     </div>
   </section>
 
@@ -756,14 +768,6 @@ document.querySelectorAll('.rate .stars button').forEach(function(b){
     var name=b.closest('.rate').dataset.name, s=b.dataset.s;
     window.open('https://wa.me/989052739235?text='+encodeURIComponent('به قطعه «'+name+'» '+s+' از ۵ ستاره می‌دم'),'_blank');
   });
-});
-</script>
-<script>
-document.getElementById('csend').addEventListener('click',function(){
-  var n=document.getElementById('cname').value.trim()||'بدون اسم';
-  var t=document.getElementById('ctext').value.trim();
-  if(!t){document.getElementById('ctext').focus();return;}
-  window.open('https://wa.me/989052739235?text='+encodeURIComponent('نظر درباره قطعات Allenservice\nنام: '+n+'\nنظر: '+t),'_blank');
 });
 </script>
 </body>
