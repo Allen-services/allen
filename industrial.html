@@ -68,6 +68,20 @@
   .bottom-nav .bi svg.wa{fill:#25D366}
   .bottom-nav .bi svg.ph{fill:var(--gold,#b57e1e)}
   footer { text-align:center; padding:26px 16px 110px; color:#a39a83; font-size:13px; }
+
+  /* ===== پاپ‌آپ شماره تماس/واتساپ (فقط دسکتاپ) ===== */
+  .num-modal{position:fixed;inset:0;z-index:300;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.55);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);opacity:0;visibility:hidden;transition:opacity .25s}
+  .num-modal.open{opacity:1;visibility:visible}
+  .num-card{position:relative;background:var(--card,#fffdf7);border:1px solid var(--gold,#b57e1e);border-radius:22px;padding:34px 38px;text-align:center;max-width:340px;width:calc(100% - 48px);box-shadow:0 24px 60px #000a;transform:translateY(12px) scale(.97);transition:transform .25s}
+  .num-modal.open .num-card{transform:none}
+  .num-close{position:absolute;top:10px;left:14px;background:none;border:none;color:var(--mut,#6b6252);font-size:18px;cursor:pointer;font-family:inherit}
+  .num-ic{font-size:38px;margin-bottom:6px}
+  .num-card h3{color:var(--gold2,#b57e1e);margin-bottom:10px;font-size:17px}
+  .num-num{font-size:25px;font-weight:bold;letter-spacing:2px;color:var(--ink,#2a2318);background:var(--bg,#f7f2e7);border:1.5px dashed var(--gold,#b57e1e);border-radius:14px;padding:10px 14px;margin-bottom:18px;direction:ltr;unicode-bidi:embed}
+  .num-btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+  .num-btns .btn{padding:10px 22px;font-size:14px;cursor:pointer;text-decoration:none;display:inline-block;border-radius:12px}
+  .num-btns .btn-gold{background:linear-gradient(135deg,#d9a441,#b57e1e);color:#fff;border:none}
+  .num-btns .btn-outline{background:transparent;color:var(--gold,#b57e1e);border:1.5px solid var(--gold,#b57e1e)}
 </style>
 </head>
 <body>
@@ -121,6 +135,21 @@
     <button id="chatSend" aria-label="ارسال">➤</button>
   </div>
 </div>
+
+<!-- ===== پاپ‌آپ شماره (دسکتاپ) ===== -->
+<div class="num-modal" id="numModal" role="dialog" aria-modal="true" aria-label="شماره تماس">
+  <div class="num-card">
+    <button class="num-close" id="numClose" aria-label="بستن">✕</button>
+    <div class="num-ic" id="numIc">📞</div>
+    <h3 id="numTitle">تماس با ما</h3>
+    <div class="num-num" id="numVal">09183658664</div>
+    <div class="num-btns">
+      <button class="btn btn-gold" id="numCopy" type="button">کپی شماره</button>
+      <a class="btn btn-outline" id="numGo" href="#">ادامه</a>
+    </div>
+  </div>
+</div>
+
 <div class="bottom-nav">
   <a href="index.html"><span class="bi">🏠</span>خانه</a>
   <a href="index.html#request"><span class="bi">🧾</span>ثبت درخواست</a>
@@ -184,5 +213,41 @@ document.getElementById('chatText').addEventListener('keydown', function(e){ if(
   }, {passive:true});
 })();
 </script>
+
+<script>
+// پاپ‌آپ شماره تماس/واتساپ — فقط دسکتاپ (موبایل رفتار عادی دارد)
+(function(){
+  if(!window.matchMedia || !matchMedia('(pointer:fine)').matches) return;
+  var modal=document.getElementById('numModal');
+  if(!modal) return;
+  var ic=document.getElementById('numIc'), title=document.getElementById('numTitle'),
+      val=document.getElementById('numVal'), go=document.getElementById('numGo'),
+      copyBtn=document.getElementById('numCopy');
+  function openNum(kind, href){
+    if(kind==='tel'){ ic.textContent='📞'; title.textContent='تماس با ما'; val.textContent='09183658664'; go.textContent='تماس گرفتن'; }
+    else { ic.textContent='💬'; title.textContent='گفتگو در واتساپ'; val.textContent='09052739235'; go.textContent='باز کردن واتساپ'; }
+    go.setAttribute('href', href);
+    modal.classList.add('open');
+  }
+  function closeNum(){ modal.classList.remove('open'); }
+  document.addEventListener('click', function(e){
+    var a = e.target.closest ? e.target.closest('a[href^="tel:"],a[href*="wa.me"]') : null;
+    if(!a || a.closest('#numModal')) return;
+    e.preventDefault();
+    openNum(a.getAttribute('href').indexOf('tel:')===0 ? 'tel' : 'wa', a.getAttribute('href'));
+  });
+  document.getElementById('numClose').addEventListener('click', closeNum);
+  modal.addEventListener('click', function(e){ if(e.target===modal) closeNum(); });
+  document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeNum(); });
+  copyBtn.addEventListener('click', function(){
+    var t = val.textContent;
+    function done(){ copyBtn.textContent='کپی شد ✓'; setTimeout(function(){ copyBtn.textContent='کپی شماره'; },1600); }
+    function fallback(){ var ta=document.createElement('textarea'); ta.value=t; document.body.appendChild(ta); ta.select(); try{document.execCommand('copy');}catch(_){} document.body.removeChild(ta); done(); }
+    if(navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(t).then(done, fallback); }
+    else fallback();
+  });
+})();
+</script>
+
 </body>
 </html>
