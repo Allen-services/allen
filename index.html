@@ -58,7 +58,9 @@
   }
   *{margin:0;padding:0;box-sizing:border-box}
   html{scroll-behavior:smooth}
-  body{font-family:'Vazirmatn',Tahoma,"Segoe UI",sans-serif;background:var(--bg);color:var(--ink);line-height:1.9;transition:background .3s,color .3s}
+  body{font-family:'Vazirmatn',Tahoma,"Segoe UI",sans-serif;color:var(--ink);line-height:1.9;transition:background .3s,color .3s;
+ background:linear-gradient(rgba(18,13,8,.87),rgba(18,13,8,.92)),url("img/bg-machines.jpg") center top/cover no-repeat fixed,var(--bg)}
+ [data-theme="light"] body{background:linear-gradient(rgba(246,239,226,.93),rgba(246,239,226,.95)),url("img/bg-machines.jpg") center top/cover no-repeat fixed,var(--bg)}
 
   /* ===== حال‌وهوای سینمایی پس‌زمینه ===== */
   body::before{content:"";position:fixed;inset:0;z-index:120;pointer-events:none;
