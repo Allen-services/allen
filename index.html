@@ -59,6 +59,18 @@
   *{margin:0;padding:0;box-sizing:border-box}
   html{scroll-behavior:smooth}
   body{font-family:'Vazirmatn',Tahoma,"Segoe UI",sans-serif;background:var(--bg);color:var(--ink);line-height:1.9;transition:background .3s,color .3s}
+
+  /* ===== حال‌وهوای سینمایی پس‌زمینه ===== */
+  body::before{content:"";position:fixed;inset:0;z-index:120;pointer-events:none;
+   background:
+    radial-gradient(110% 70% at 50% -10%,rgba(224,168,60,.07),transparent 55%),
+    radial-gradient(ellipse at 50% 45%,transparent 55%,rgba(0,0,0,.42) 100%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.13'/%3E%3C/svg%3E");}
+  [data-theme="light"] body::before{
+   background:
+    radial-gradient(110% 70% at 50% -10%,rgba(185,143,42,.10),transparent 55%),
+    radial-gradient(ellipse at 50% 45%,transparent 60%,rgba(58,42,16,.20) 100%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.09'/%3E%3C/svg%3E");}
   .wrap{max-width:1100px;margin:0 auto;padding:0 20px}
   img{max-width:100%}
 
