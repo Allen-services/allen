@@ -78,6 +78,12 @@
   .menu-panel{display:none;position:absolute;top:100%;right:0;left:0;background:var(--bg2);border-bottom:1px solid var(--line);z-index:60}
   .menu-panel.open{display:block}
   .menu-panel a{display:block;padding:13px 22px;color:var(--ink);text-decoration:none;font-size:15px;border-top:1px solid var(--line)}
+  .menu-parent{display:block;width:100%;text-align:right;padding:13px 22px;color:var(--ink);background:none;border:none;border-top:1px solid var(--line);font-size:15px;font-family:inherit;cursor:pointer}
+  .menu-parent .arr{float:left;transition:transform .25s;color:var(--gold)}
+  .menu-parent.open .arr{transform:rotate(180deg)}
+  .menu-sub{display:none;background:var(--bg)}
+  .menu-sub.open{display:block}
+  .menu-sub a{padding-right:38px;font-size:14px;color:var(--mut)}
   @media(min-width:900px){.main-nav{display:flex}.header-cta{display:inline-block}.menu-btn{display:none}}
 
   /* ===== هیرو ===== */
@@ -281,8 +287,11 @@
     </div>
     <div class="menu-panel" id="menuPanel">
       <a href="#services">خدمات ما</a>
-      <a href="#shop">فروش دستگاه</a>
-      <a href="forsale.html">📋 دستگاه‌های فروشی</a>
+      <button class="menu-parent" id="saleParent" aria-expanded="false">فروش دستگاه <span class="arr">▾</span></button>
+      <div class="menu-sub" id="saleSub">
+        <a href="forsale.html">🏭 دستگاه صنعتی</a>
+        <a href="home-sale.html">☕ دستگاه خانگی</a>
+      </div>
       <a href="#work">نمونه‌کارها</a>
       <a href="#guides">راهنمای تعمیرات</a>
       <a href="#request">ثبت درخواست تعمیر</a>
@@ -559,6 +568,12 @@ document.getElementById('menuBtn').addEventListener('click', function(){
 });
 document.querySelectorAll('#menuPanel a').forEach(function(a){
   a.addEventListener('click', function(){ document.getElementById('menuPanel').classList.remove('open'); });
+});
+var saleParent=document.getElementById('saleParent'),saleSub=document.getElementById('saleSub');
+saleParent.addEventListener('click',function(){
+  var o=saleSub.classList.toggle('open');
+  saleParent.classList.toggle('open',o);
+  saleParent.setAttribute('aria-expanded',o);
 });
 // فرم → واتساپ
 document.getElementById('reqForm').addEventListener('submit', function(e){
