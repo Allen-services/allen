@@ -209,6 +209,12 @@
   .bottom-nav .bi svg.wa{fill:#25D366}
   .bottom-nav .bi svg.ph{fill:var(--gold)}
   .bottom-nav a.active{color:var(--gold);font-weight:bold}
+  .phimg{width:100%;aspect-ratio:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;background:var(--bg2);border-bottom:1px solid var(--line)}
+  .phimg span{font-size:64px;opacity:.7}
+  .phimg small{color:var(--mut);font-size:12.5px}
+  .pstock{font-size:13px;color:var(--mut);margin:2px 0 12px}
+  .pstock b{color:var(--gold2);font-size:14.5px}
+  [data-theme="light"] .pstock b{color:var(--gold)}
 </style>
 <style>
   .fs-list{display:grid;gap:22px;max-width:760px;margin:0 auto}
@@ -309,13 +315,227 @@
         <p>آسیاب‌های صنعتی و خانگی با قیمت مشخص — برای سفارش، در واتساپ پیام بده</p>
       </div>
             <div class="parts-grid" id="grindersGrid">
-
-        <div style="grid-column:1/-1;text-align:center;padding:56px 20px">
-          <div style="font-size:56px;margin-bottom:14px">⚙️</div>
-          <h2 style="color:var(--gold2);font-size:21px;margin-bottom:10px">به‌زودی آسیاب‌ها اضافه می‌شوند</h2>
-          <p style="color:var(--mut);font-size:14.5px;margin-bottom:20px">عکس و قیمت آسیاب‌ها به‌زودی اینجا قرار می‌گیرد — برای استعلام موجودی در واتساپ پیام بده</p>
-          <a class="btn btn-gold" href="https://wa.me/989183658664?text=%D8%B3%D9%84%D8%A7%D9%85%D8%8C%20%D8%AF%D8%B1%D8%A8%D8%A7%D8%B1%D9%87%20%D8%A2%D8%B3%DB%8C%D8%A7%D8%A8%E2%80%8C%D9%87%D8%A7%DB%8C%20%D9%82%D9%87%D9%88%D9%87%20%D8%A7%D8%B7%D9%84%D8%A7%D8%B9%D8%A7%D8%AA%20%D9%85%DB%8C%E2%80%8C%D8%AE%D9%88%D8%A7%D9%85">استعلام در واتساپ 💬</a>
-        </div>
+        <article class="pcard">
+          <div class="phimg"><span>⚙️</span><small>عکس به‌زودی</small></div>
+          <div class="pb">
+            <h3>آسیاب جیمبالی دوزردار</h3>
+            <div class="pprice">۱۳۰ میلیون تومان</div>
+            <div class="pstock">موجودی: <b>۱۴۹ عدد</b></div>
+            <a class="btn btn-gold" href="https://wa.me/989183658664?text=%D8%B3%D9%84%D8%A7%D9%85%D8%8C%20%C2%AB%D8%A2%D8%B3%DB%8C%D8%A7%D8%A8%20%D8%AC%DB%8C%D9%85%D8%A8%D8%A7%D9%84%DB%8C%20%D8%AF%D9%88%D8%B2%D8%B1%D8%AF%D8%A7%D8%B1%C2%BB%20%28%DB%B1%DB%B3%DB%B0%20%D9%85%DB%8C%D9%84%DB%8C%D9%88%D9%86%20%D8%AA%D9%88%D9%85%D8%A7%D9%86%29%20%D8%B1%D9%88%20%D9%85%DB%8C%E2%80%8C%D8%AE%D9%88%D8%A7%D9%85%20%D8%B3%D9%81%D8%A7%D8%B1%D8%B4%20%D8%A8%D8%AF%D9%85">سفارش در واتساپ</a>
+            <div class="rate" data-name="آسیاب جیمبالی دوزردار">
+              <span>امتیاز بده:</span>
+              <span class="stars"><button data-s="5" aria-label="5 ستاره">★</button><button data-s="4" aria-label="4 ستاره">★</button><button data-s="3" aria-label="3 ستاره">★</button><button data-s="2" aria-label="2 ستاره">★</button><button data-s="1" aria-label="1 ستاره">★</button></span>
+            </div>
+          </div>
+        </article>
+        <article class="pcard">
+          <div class="phimg"><span>⚙️</span><small>عکس به‌زودی</small></div>
+          <div class="pb">
+            <h3>آسیاب کاسادیو دوزردار</h3>
+            <div class="pprice">۱۳۰ میلیون تومان</div>
+            <div class="pstock">موجودی: <b>۴۲ عدد</b></div>
+            <a class="btn btn-gold" href="https://wa.me/989183658664?text=%D8%B3%D9%84%D8%A7%D9%85%D8%8C%20%C2%AB%D8%A2%D8%B3%DB%8C%D8%A7%D8%A8%20%DA%A9%D8%A7%D8%B3%D8%A7%D8%AF%DB%8C%D9%88%20%D8%AF%D9%88%D8%B2%D8%B1%D8%AF%D8%A7%D8%B1%C2%BB%20%28%DB%B1%DB%B3%DB%B0%20%D9%85%DB%8C%D9%84%DB%8C%D9%88%D9%86%20%D8%AA%D9%88%D9%85%D8%A7%D9%86%29%20%D8%B1%D9%88%20%D9%85%DB%8C%E2%80%8C%D8%AE%D9%88%D8%A7%D9%85%20%D8%B3%D9%81%D8%A7%D8%B1%D8%B4%20%D8%A8%D8%AF%D9%85">سفارش در واتساپ</a>
+            <div class="rate" data-name="آسیاب کاسادیو دوزردار">
+              <span>امتیاز بده:</span>
+              <span class="stars"><button data-s="5" aria-label="5 ستاره">★</button><button data-s="4" aria-label="4 ستاره">★</button><button data-s="3" aria-label="3 ستاره">★</button><button data-s="2" aria-label="2 ستاره">★</button><button data-s="1" aria-label="1 ستاره">★</button></span>
+            </div>
+          </div>
+        </article>
+        <article class="pcard">
+          <div class="phimg"><span>⚙️</span><small>عکس به‌زودی</small></div>
+          <div class="pb">
+            <h3>آسیاب هی کافی چینی دوزردار</h3>
+            <div class="pprice">۹۵ میلیون تومان</div>
+            <div class="pstock">موجودی: <b>۵ عدد</b></div>
+            <a class="btn btn-gold" href="https://wa.me/989183658664?text=%D8%B3%D9%84%D8%A7%D9%85%D8%8C%20%C2%AB%D8%A2%D8%B3%DB%8C%D8%A7%D8%A8%20%D9%87%DB%8C%20%DA%A9%D8%A7%D9%81%DB%8C%20%DA%86%DB%8C%D9%86%DB%8C%20%D8%AF%D9%88%D8%B2%D8%B1%D8%AF%D8%A7%D8%B1%C2%BB%20%28%DB%B9%DB%B5%20%D9%85%DB%8C%D9%84%DB%8C%D9%88%D9%86%20%D8%AA%D9%88%D9%85%D8%A7%D9%86%29%20%D8%B1%D9%88%20%D9%85%DB%8C%E2%80%8C%D8%AE%D9%88%D8%A7%D9%85%20%D8%B3%D9%81%D8%A7%D8%B1%D8%B4%20%D8%A8%D8%AF%D9%85">سفارش در واتساپ</a>
+            <div class="rate" data-name="آسیاب هی کافی چینی دوزردار">
+              <span>امتیاز بده:</span>
+              <span class="stars"><button data-s="5" aria-label="5 ستاره">★</button><button data-s="4" aria-label="4 ستاره">★</button><button data-s="3" aria-label="3 ستاره">★</button><button data-s="2" aria-label="2 ستاره">★</button><button data-s="1" aria-label="1 ستاره">★</button></span>
+            </div>
+          </div>
+        </article>
+        <article class="pcard">
+          <div class="phimg"><span>⚙️</span><small>عکس به‌زودی</small></div>
+          <div class="pb">
+            <h3>آسیاب فیورنزاتو f64 اندیمند</h3>
+            <div class="pprice">۱۶۰ میلیون تومان</div>
+            <div class="pstock">موجودی: <b>۳۲ عدد</b></div>
+            <a class="btn btn-gold" href="https://wa.me/989183658664?text=%D8%B3%D9%84%D8%A7%D9%85%D8%8C%20%C2%AB%D8%A2%D8%B3%DB%8C%D8%A7%D8%A8%20%D9%81%DB%8C%D9%88%D8%B1%D9%86%D8%B2%D8%A7%D8%AA%D9%88%20f64%20%D8%A7%D9%86%D8%AF%DB%8C%D9%85%D9%86%D8%AF%C2%BB%20%28%DB%B1%DB%B6%DB%B0%20%D9%85%DB%8C%D9%84%DB%8C%D9%88%D9%86%20%D8%AA%D9%88%D9%85%D8%A7%D9%86%29%20%D8%B1%D9%88%20%D9%85%DB%8C%E2%80%8C%D8%AE%D9%88%D8%A7%D9%85%20%D8%B3%D9%81%D8%A7%D8%B1%D8%B4%20%D8%A8%D8%AF%D9%85">سفارش در واتساپ</a>
+            <div class="rate" data-name="آسیاب فیورنزاتو f64 اندیمند">
+              <span>امتیاز بده:</span>
+              <span class="stars"><button data-s="5" aria-label="5 ستاره">★</button><button data-s="4" aria-label="4 ستاره">★</button><button data-s="3" aria-label="3 ستاره">★</button><button data-s="2" aria-label="2 ستاره">★</button><button data-s="1" aria-label="1 ستاره">★</button></span>
+            </div>
+          </div>
+        </article>
+        <article class="pcard">
+          <div class="phimg"><span>⚙️</span><small>عکس به‌زودی</small></div>
+          <div class="pb">
+            <h3>آسیاب مازر دوزردار</h3>
+            <div class="pprice">۱۴۰ میلیون تومان</div>
+            <div class="pstock">موجودی: <b>۹ عدد</b></div>
+            <a class="btn btn-gold" href="https://wa.me/989183658664?text=%D8%B3%D9%84%D8%A7%D9%85%D8%8C%20%C2%AB%D8%A2%D8%B3%DB%8C%D8%A7%D8%A8%20%D9%85%D8%A7%D8%B2%D8%B1%20%D8%AF%D9%88%D8%B2%D8%B1%D8%AF%D8%A7%D8%B1%C2%BB%20%28%DB%B1%DB%B4%DB%B0%20%D9%85%DB%8C%D9%84%DB%8C%D9%88%D9%86%20%D8%AA%D9%88%D9%85%D8%A7%D9%86%29%20%D8%B1%D9%88%20%D9%85%DB%8C%E2%80%8C%D8%AE%D9%88%D8%A7%D9%85%20%D8%B3%D9%81%D8%A7%D8%B1%D8%B4%20%D8%A8%D8%AF%D9%85">سفارش در واتساپ</a>
+            <div class="rate" data-name="آسیاب مازر دوزردار">
+              <span>امتیاز بده:</span>
+              <span class="stars"><button data-s="5" aria-label="5 ستاره">★</button><button data-s="4" aria-label="4 ستاره">★</button><button data-s="3" aria-label="3 ستاره">★</button><button data-s="2" aria-label="2 ستاره">★</button><button data-s="1" aria-label="1 ستاره">★</button></span>
+            </div>
+          </div>
+        </article>
+        <article class="pcard">
+          <div class="phimg"><span>⚙️</span><small>عکس به‌زودی</small></div>
+          <div class="pb">
+            <h3>آسیاب کامپکت k6 دوزردار</h3>
+            <div class="pprice">۱۰۰ میلیون تومان</div>
+            <div class="pstock">موجودی: <b>۲ عدد</b></div>
+            <a class="btn btn-gold" href="https://wa.me/989183658664?text=%D8%B3%D9%84%D8%A7%D9%85%D8%8C%20%C2%AB%D8%A2%D8%B3%DB%8C%D8%A7%D8%A8%20%DA%A9%D8%A7%D9%85%D9%BE%DA%A9%D8%AA%20k6%20%D8%AF%D9%88%D8%B2%D8%B1%D8%AF%D8%A7%D8%B1%C2%BB%20%28%DB%B1%DB%B0%DB%B0%20%D9%85%DB%8C%D9%84%DB%8C%D9%88%D9%86%20%D8%AA%D9%88%D9%85%D8%A7%D9%86%29%20%D8%B1%D9%88%20%D9%85%DB%8C%E2%80%8C%D8%AE%D9%88%D8%A7%D9%85%20%D8%B3%D9%81%D8%A7%D8%B1%D8%B4%20%D8%A8%D8%AF%D9%85">سفارش در واتساپ</a>
+            <div class="rate" data-name="آسیاب کامپکت k6 دوزردار">
+              <span>امتیاز بده:</span>
+              <span class="stars"><button data-s="5" aria-label="5 ستاره">★</button><button data-s="4" aria-label="4 ستاره">★</button><button data-s="3" aria-label="3 ستاره">★</button><button data-s="2" aria-label="2 ستاره">★</button><button data-s="1" aria-label="1 ستاره">★</button></span>
+            </div>
+          </div>
+        </article>
+        <article class="pcard">
+          <div class="phimg"><span>⚙️</span><small>عکس به‌زودی</small></div>
+          <div class="pb">
+            <h3>آسیاب وگا دوزردار</h3>
+            <div class="pprice">۱۱۰ میلیون تومان</div>
+            <div class="pstock">موجودی: <b>۱ عدد</b></div>
+            <a class="btn btn-gold" href="https://wa.me/989183658664?text=%D8%B3%D9%84%D8%A7%D9%85%D8%8C%20%C2%AB%D8%A2%D8%B3%DB%8C%D8%A7%D8%A8%20%D9%88%DA%AF%D8%A7%20%D8%AF%D9%88%D8%B2%D8%B1%D8%AF%D8%A7%D8%B1%C2%BB%20%28%DB%B1%DB%B1%DB%B0%20%D9%85%DB%8C%D9%84%DB%8C%D9%88%D9%86%20%D8%AA%D9%88%D9%85%D8%A7%D9%86%29%20%D8%B1%D9%88%20%D9%85%DB%8C%E2%80%8C%D8%AE%D9%88%D8%A7%D9%85%20%D8%B3%D9%81%D8%A7%D8%B1%D8%B4%20%D8%A8%D8%AF%D9%85">سفارش در واتساپ</a>
+            <div class="rate" data-name="آسیاب وگا دوزردار">
+              <span>امتیاز بده:</span>
+              <span class="stars"><button data-s="5" aria-label="5 ستاره">★</button><button data-s="4" aria-label="4 ستاره">★</button><button data-s="3" aria-label="3 ستاره">★</button><button data-s="2" aria-label="2 ستاره">★</button><button data-s="1" aria-label="1 ستاره">★</button></span>
+            </div>
+          </div>
+        </article>
+        <article class="pcard">
+          <div class="phimg"><span>⚙️</span><small>عکس به‌زودی</small></div>
+          <div class="pb">
+            <h3>آسیاب کاسادیو دوقلو دوزردار</h3>
+            <div class="pprice">۱۶۰ میلیون تومان</div>
+            <div class="pstock">موجودی: <b>۱ عدد</b></div>
+            <a class="btn btn-gold" href="https://wa.me/989183658664?text=%D8%B3%D9%84%D8%A7%D9%85%D8%8C%20%C2%AB%D8%A2%D8%B3%DB%8C%D8%A7%D8%A8%20%DA%A9%D8%A7%D8%B3%D8%A7%D8%AF%DB%8C%D9%88%20%D8%AF%D9%88%D9%82%D9%84%D9%88%20%D8%AF%D9%88%D8%B2%D8%B1%D8%AF%D8%A7%D8%B1%C2%BB%20%28%DB%B1%DB%B6%DB%B0%20%D9%85%DB%8C%D9%84%DB%8C%D9%88%D9%86%20%D8%AA%D9%88%D9%85%D8%A7%D9%86%29%20%D8%B1%D9%88%20%D9%85%DB%8C%E2%80%8C%D8%AE%D9%88%D8%A7%D9%85%20%D8%B3%D9%81%D8%A7%D8%B1%D8%B4%20%D8%A8%D8%AF%D9%85">سفارش در واتساپ</a>
+            <div class="rate" data-name="آسیاب کاسادیو دوقلو دوزردار">
+              <span>امتیاز بده:</span>
+              <span class="stars"><button data-s="5" aria-label="5 ستاره">★</button><button data-s="4" aria-label="4 ستاره">★</button><button data-s="3" aria-label="3 ستاره">★</button><button data-s="2" aria-label="2 ستاره">★</button><button data-s="1" aria-label="1 ستاره">★</button></span>
+            </div>
+          </div>
+        </article>
+        <article class="pcard">
+          <div class="phimg"><span>⚙️</span><small>عکس به‌زودی</small></div>
+          <div class="pb">
+            <h3>آسیاب alinox دوزردار</h3>
+            <div class="pprice">۹۵ میلیون تومان</div>
+            <div class="pstock">موجودی: <b>۱ عدد</b></div>
+            <a class="btn btn-gold" href="https://wa.me/989183658664?text=%D8%B3%D9%84%D8%A7%D9%85%D8%8C%20%C2%AB%D8%A2%D8%B3%DB%8C%D8%A7%D8%A8%20alinox%20%D8%AF%D9%88%D8%B2%D8%B1%D8%AF%D8%A7%D8%B1%C2%BB%20%28%DB%B9%DB%B5%20%D9%85%DB%8C%D9%84%DB%8C%D9%88%D9%86%20%D8%AA%D9%88%D9%85%D8%A7%D9%86%29%20%D8%B1%D9%88%20%D9%85%DB%8C%E2%80%8C%D8%AE%D9%88%D8%A7%D9%85%20%D8%B3%D9%81%D8%A7%D8%B1%D8%B4%20%D8%A8%D8%AF%D9%85">سفارش در واتساپ</a>
+            <div class="rate" data-name="آسیاب alinox دوزردار">
+              <span>امتیاز بده:</span>
+              <span class="stars"><button data-s="5" aria-label="5 ستاره">★</button><button data-s="4" aria-label="4 ستاره">★</button><button data-s="3" aria-label="3 ستاره">★</button><button data-s="2" aria-label="2 ستاره">★</button><button data-s="1" aria-label="1 ستاره">★</button></span>
+            </div>
+          </div>
+        </article>
+        <article class="pcard">
+          <div class="phimg"><span>⚙️</span><small>عکس به‌زودی</small></div>
+          <div class="pb">
+            <h3>آسیاب اکسپوبار دوزردار</h3>
+            <div class="pprice">۹۵ میلیون تومان</div>
+            <div class="pstock">موجودی: <b>۱ عدد</b></div>
+            <a class="btn btn-gold" href="https://wa.me/989183658664?text=%D8%B3%D9%84%D8%A7%D9%85%D8%8C%20%C2%AB%D8%A2%D8%B3%DB%8C%D8%A7%D8%A8%20%D8%A7%DA%A9%D8%B3%D9%BE%D9%88%D8%A8%D8%A7%D8%B1%20%D8%AF%D9%88%D8%B2%D8%B1%D8%AF%D8%A7%D8%B1%C2%BB%20%28%DB%B9%DB%B5%20%D9%85%DB%8C%D9%84%DB%8C%D9%88%D9%86%20%D8%AA%D9%88%D9%85%D8%A7%D9%86%29%20%D8%B1%D9%88%20%D9%85%DB%8C%E2%80%8C%D8%AE%D9%88%D8%A7%D9%85%20%D8%B3%D9%81%D8%A7%D8%B1%D8%B4%20%D8%A8%D8%AF%D9%85">سفارش در واتساپ</a>
+            <div class="rate" data-name="آسیاب اکسپوبار دوزردار">
+              <span>امتیاز بده:</span>
+              <span class="stars"><button data-s="5" aria-label="5 ستاره">★</button><button data-s="4" aria-label="4 ستاره">★</button><button data-s="3" aria-label="3 ستاره">★</button><button data-s="2" aria-label="2 ستاره">★</button><button data-s="1" aria-label="1 ستاره">★</button></span>
+            </div>
+          </div>
+        </article>
+        <article class="pcard">
+          <div class="phimg"><span>⚙️</span><small>عکس به‌زودی</small></div>
+          <div class="pb">
+            <h3>آسیاب سنمارکو دوزردار</h3>
+            <div class="pprice">۹۵ میلیون تومان</div>
+            <div class="pstock">موجودی: <b>۸ عدد</b></div>
+            <a class="btn btn-gold" href="https://wa.me/989183658664?text=%D8%B3%D9%84%D8%A7%D9%85%D8%8C%20%C2%AB%D8%A2%D8%B3%DB%8C%D8%A7%D8%A8%20%D8%B3%D9%86%D9%85%D8%A7%D8%B1%DA%A9%D9%88%20%D8%AF%D9%88%D8%B2%D8%B1%D8%AF%D8%A7%D8%B1%C2%BB%20%28%DB%B9%DB%B5%20%D9%85%DB%8C%D9%84%DB%8C%D9%88%D9%86%20%D8%AA%D9%88%D9%85%D8%A7%D9%86%29%20%D8%B1%D9%88%20%D9%85%DB%8C%E2%80%8C%D8%AE%D9%88%D8%A7%D9%85%20%D8%B3%D9%81%D8%A7%D8%B1%D8%B4%20%D8%A8%D8%AF%D9%85">سفارش در واتساپ</a>
+            <div class="rate" data-name="آسیاب سنمارکو دوزردار">
+              <span>امتیاز بده:</span>
+              <span class="stars"><button data-s="5" aria-label="5 ستاره">★</button><button data-s="4" aria-label="4 ستاره">★</button><button data-s="3" aria-label="3 ستاره">★</button><button data-s="2" aria-label="2 ستاره">★</button><button data-s="1" aria-label="1 ستاره">★</button></span>
+            </div>
+          </div>
+        </article>
+        <article class="pcard">
+          <div class="phimg"><span>⚙️</span><small>عکس به‌زودی</small></div>
+          <div class="pb">
+            <h3>آسیاب کونیل دوزردار</h3>
+            <div class="pprice">۹۵ میلیون تومان</div>
+            <div class="pstock">موجودی: <b>۱ عدد</b></div>
+            <a class="btn btn-gold" href="https://wa.me/989183658664?text=%D8%B3%D9%84%D8%A7%D9%85%D8%8C%20%C2%AB%D8%A2%D8%B3%DB%8C%D8%A7%D8%A8%20%DA%A9%D9%88%D9%86%DB%8C%D9%84%20%D8%AF%D9%88%D8%B2%D8%B1%D8%AF%D8%A7%D8%B1%C2%BB%20%28%DB%B9%DB%B5%20%D9%85%DB%8C%D9%84%DB%8C%D9%88%D9%86%20%D8%AA%D9%88%D9%85%D8%A7%D9%86%29%20%D8%B1%D9%88%20%D9%85%DB%8C%E2%80%8C%D8%AE%D9%88%D8%A7%D9%85%20%D8%B3%D9%81%D8%A7%D8%B1%D8%B4%20%D8%A8%D8%AF%D9%85">سفارش در واتساپ</a>
+            <div class="rate" data-name="آسیاب کونیل دوزردار">
+              <span>امتیاز بده:</span>
+              <span class="stars"><button data-s="5" aria-label="5 ستاره">★</button><button data-s="4" aria-label="4 ستاره">★</button><button data-s="3" aria-label="3 ستاره">★</button><button data-s="2" aria-label="2 ستاره">★</button><button data-s="1" aria-label="1 ستاره">★</button></span>
+            </div>
+          </div>
+        </article>
+        <article class="pcard">
+          <div class="phimg"><span>⚙️</span><small>عکس به‌زودی</small></div>
+          <div class="pb">
+            <h3>آسیاب کاسادیو اندیمند</h3>
+            <div class="pprice">۱۵۵ میلیون تومان</div>
+            <div class="pstock">موجودی: <b>۱ عدد</b></div>
+            <a class="btn btn-gold" href="https://wa.me/989183658664?text=%D8%B3%D9%84%D8%A7%D9%85%D8%8C%20%C2%AB%D8%A2%D8%B3%DB%8C%D8%A7%D8%A8%20%DA%A9%D8%A7%D8%B3%D8%A7%D8%AF%DB%8C%D9%88%20%D8%A7%D9%86%D8%AF%DB%8C%D9%85%D9%86%D8%AF%C2%BB%20%28%DB%B1%DB%B5%DB%B5%20%D9%85%DB%8C%D9%84%DB%8C%D9%88%D9%86%20%D8%AA%D9%88%D9%85%D8%A7%D9%86%29%20%D8%B1%D9%88%20%D9%85%DB%8C%E2%80%8C%D8%AE%D9%88%D8%A7%D9%85%20%D8%B3%D9%81%D8%A7%D8%B1%D8%B4%20%D8%A8%D8%AF%D9%85">سفارش در واتساپ</a>
+            <div class="rate" data-name="آسیاب کاسادیو اندیمند">
+              <span>امتیاز بده:</span>
+              <span class="stars"><button data-s="5" aria-label="5 ستاره">★</button><button data-s="4" aria-label="4 ستاره">★</button><button data-s="3" aria-label="3 ستاره">★</button><button data-s="2" aria-label="2 ستاره">★</button><button data-s="1" aria-label="1 ستاره">★</button></span>
+            </div>
+          </div>
+        </article>
+        <article class="pcard">
+          <div class="phimg"><span>⚙️</span><small>عکس به‌زودی</small></div>
+          <div class="pb">
+            <h3>آسیاب جیمبالی اندیمند</h3>
+            <div class="pprice">۱۶۰ میلیون تومان</div>
+            <div class="pstock">موجودی: <b>۲ عدد</b></div>
+            <a class="btn btn-gold" href="https://wa.me/989183658664?text=%D8%B3%D9%84%D8%A7%D9%85%D8%8C%20%C2%AB%D8%A2%D8%B3%DB%8C%D8%A7%D8%A8%20%D8%AC%DB%8C%D9%85%D8%A8%D8%A7%D9%84%DB%8C%20%D8%A7%D9%86%D8%AF%DB%8C%D9%85%D9%86%D8%AF%C2%BB%20%28%DB%B1%DB%B6%DB%B0%20%D9%85%DB%8C%D9%84%DB%8C%D9%88%D9%86%20%D8%AA%D9%88%D9%85%D8%A7%D9%86%29%20%D8%B1%D9%88%20%D9%85%DB%8C%E2%80%8C%D8%AE%D9%88%D8%A7%D9%85%20%D8%B3%D9%81%D8%A7%D8%B1%D8%B4%20%D8%A8%D8%AF%D9%85">سفارش در واتساپ</a>
+            <div class="rate" data-name="آسیاب جیمبالی اندیمند">
+              <span>امتیاز بده:</span>
+              <span class="stars"><button data-s="5" aria-label="5 ستاره">★</button><button data-s="4" aria-label="4 ستاره">★</button><button data-s="3" aria-label="3 ستاره">★</button><button data-s="2" aria-label="2 ستاره">★</button><button data-s="1" aria-label="1 ستاره">★</button></span>
+            </div>
+          </div>
+        </article>
+        <article class="pcard">
+          <div class="phimg"><span>⚙️</span><small>عکس به‌زودی</small></div>
+          <div class="pb">
+            <h3>آسیاب رنچیلیو دوزردار</h3>
+            <div class="pprice">۱۱۰ میلیون تومان</div>
+            <div class="pstock">موجودی: <b>۲ عدد</b></div>
+            <a class="btn btn-gold" href="https://wa.me/989183658664?text=%D8%B3%D9%84%D8%A7%D9%85%D8%8C%20%C2%AB%D8%A2%D8%B3%DB%8C%D8%A7%D8%A8%20%D8%B1%D9%86%DA%86%DB%8C%D9%84%DB%8C%D9%88%20%D8%AF%D9%88%D8%B2%D8%B1%D8%AF%D8%A7%D8%B1%C2%BB%20%28%DB%B1%DB%B1%DB%B0%20%D9%85%DB%8C%D9%84%DB%8C%D9%88%D9%86%20%D8%AA%D9%88%D9%85%D8%A7%D9%86%29%20%D8%B1%D9%88%20%D9%85%DB%8C%E2%80%8C%D8%AE%D9%88%D8%A7%D9%85%20%D8%B3%D9%81%D8%A7%D8%B1%D8%B4%20%D8%A8%D8%AF%D9%85">سفارش در واتساپ</a>
+            <div class="rate" data-name="آسیاب رنچیلیو دوزردار">
+              <span>امتیاز بده:</span>
+              <span class="stars"><button data-s="5" aria-label="5 ستاره">★</button><button data-s="4" aria-label="4 ستاره">★</button><button data-s="3" aria-label="3 ستاره">★</button><button data-s="2" aria-label="2 ستاره">★</button><button data-s="1" aria-label="1 ستاره">★</button></span>
+            </div>
+          </div>
+        </article>
+        <article class="pcard">
+          <div class="phimg"><span>⚙️</span><small>عکس به‌زودی</small></div>
+          <div class="pb">
+            <h3>آسیاب فیورنزاتو دوزردار</h3>
+            <div class="pprice">۱۱۰ میلیون تومان</div>
+            <div class="pstock">موجودی: <b>۱ عدد</b></div>
+            <a class="btn btn-gold" href="https://wa.me/989183658664?text=%D8%B3%D9%84%D8%A7%D9%85%D8%8C%20%C2%AB%D8%A2%D8%B3%DB%8C%D8%A7%D8%A8%20%D9%81%DB%8C%D9%88%D8%B1%D9%86%D8%B2%D8%A7%D8%AA%D9%88%20%D8%AF%D9%88%D8%B2%D8%B1%D8%AF%D8%A7%D8%B1%C2%BB%20%28%DB%B1%DB%B1%DB%B0%20%D9%85%DB%8C%D9%84%DB%8C%D9%88%D9%86%20%D8%AA%D9%88%D9%85%D8%A7%D9%86%29%20%D8%B1%D9%88%20%D9%85%DB%8C%E2%80%8C%D8%AE%D9%88%D8%A7%D9%85%20%D8%B3%D9%81%D8%A7%D8%B1%D8%B4%20%D8%A8%D8%AF%D9%85">سفارش در واتساپ</a>
+            <div class="rate" data-name="آسیاب فیورنزاتو دوزردار">
+              <span>امتیاز بده:</span>
+              <span class="stars"><button data-s="5" aria-label="5 ستاره">★</button><button data-s="4" aria-label="4 ستاره">★</button><button data-s="3" aria-label="3 ستاره">★</button><button data-s="2" aria-label="2 ستاره">★</button><button data-s="1" aria-label="1 ستاره">★</button></span>
+            </div>
+          </div>
+        </article>
+        <article class="pcard">
+          <div class="phimg"><span>⚙️</span><small>عکس به‌زودی</small></div>
+          <div class="pb">
+            <h3>آسیاب کومار اندیمند</h3>
+            <div class="pprice">۱۰۰ میلیون تومان</div>
+            <div class="pstock">موجودی: <b>۱ عدد</b></div>
+            <a class="btn btn-gold" href="https://wa.me/989183658664?text=%D8%B3%D9%84%D8%A7%D9%85%D8%8C%20%C2%AB%D8%A2%D8%B3%DB%8C%D8%A7%D8%A8%20%DA%A9%D9%88%D9%85%D8%A7%D8%B1%20%D8%A7%D9%86%D8%AF%DB%8C%D9%85%D9%86%D8%AF%C2%BB%20%28%DB%B1%DB%B0%DB%B0%20%D9%85%DB%8C%D9%84%DB%8C%D9%88%D9%86%20%D8%AA%D9%88%D9%85%D8%A7%D9%86%29%20%D8%B1%D9%88%20%D9%85%DB%8C%E2%80%8C%D8%AE%D9%88%D8%A7%D9%85%20%D8%B3%D9%81%D8%A7%D8%B1%D8%B4%20%D8%A8%D8%AF%D9%85">سفارش در واتساپ</a>
+            <div class="rate" data-name="آسیاب کومار اندیمند">
+              <span>امتیاز بده:</span>
+              <span class="stars"><button data-s="5" aria-label="5 ستاره">★</button><button data-s="4" aria-label="4 ستاره">★</button><button data-s="3" aria-label="3 ستاره">★</button><button data-s="2" aria-label="2 ستاره">★</button><button data-s="1" aria-label="1 ستاره">★</button></span>
+            </div>
+          </div>
+        </article>
       </div>
     </div>
   </section>
@@ -458,7 +678,7 @@ themeBtn.addEventListener('click', function(){
 });
 // افکت ظاهر شدن کارت‌ها موقع اسکرول
 (function(){
-  var els = document.querySelectorAll('.fs-card,.sec-head,.contact-card,.fs-note');
+  var els = document.querySelectorAll('.fs-card,.sec-head,.contact-card,.fs-note,.pcard,.sec-head');
   els.forEach(function(el){ el.classList.add('reveal'); });
   if(!('IntersectionObserver' in window)){ els.forEach(function(el){ el.classList.add('visible'); }); return; }
   var io = new IntersectionObserver(function(entries){
