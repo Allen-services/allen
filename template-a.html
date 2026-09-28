@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Allen | قالب تیره‌طلایی لوکس</title>
+<style>
+  @font-face{font-family:'Vazirmatn';font-style:normal;font-weight:400;font-display:swap;src:url('fonts/vazirmatn-Regular.woff2') format('woff2')}
+  @font-face{font-family:'Vazirmatn';font-style:normal;font-weight:500;font-display:swap;src:url('fonts/vazirmatn-Medium.woff2') format('woff2')}
+  @font-face{font-family:'Vazirmatn';font-style:normal;font-weight:700;font-display:swap;src:url('fonts/vazirmatn-Bold.woff2') format('woff2')}
+  @font-face{font-family:'Vazirmatn';font-style:normal;font-weight:800;font-display:swap;src:url('fonts/vazirmatn-ExtraBold.woff2') format('woff2')}
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:'Vazirmatn',Tahoma,"Segoe UI",sans-serif; background:#0b0a08; color:#f0e9d8; line-height:1.9; }
+  .gold { color:#d4a437; }
+  .hero {
+    text-align:center; padding:70px 20px 50px;
+    background:radial-gradient(ellipse at 50% -10%, #3a2d14 0%, #0b0a08 60%);
+    border-bottom:1px solid #2c2517;
+  }
+  .hero img { width:170px; border:2px solid #d4a437; border-radius:22px; margin-bottom:18px; box-shadow:0 0 40px #d4a43733; }
+  .hero h1 { font-size:42px; letter-spacing:6px; }
+  .hero .tag { color:#b8ab8d; margin-top:10px; font-size:16px; }
+  .badges { display:flex; gap:10px; justify-content:center; margin-top:22px; flex-wrap:wrap; }
+  .badge { border:1px solid #d4a43755; color:#d4a437; border-radius:20px; padding:6px 16px; font-size:13px; }
+  section { max-width:680px; margin:0 auto; padding:44px 22px; }
+  h2 { font-size:23px; text-align:center; margin-bottom:24px; }
+  h2::after { content:""; display:block; width:60px; height:3px; background:linear-gradient(90deg,transparent,#d4a437,transparent); margin:10px auto 0; }
+  .cards { display:grid; gap:16px; }
+  .card {
+    background:linear-gradient(160deg,#171310,#100d0a);
+    border:1px solid #2c2517; border-radius:16px; padding:22px;
+    display:flex; gap:16px; align-items:flex-start;
+  }
+  .card .ic { font-size:30px; flex:0 0 auto; }
+  .card h3 { color:#d4a437; font-size:17px; margin-bottom:6px; }
+  .card p { color:#cfc4a8; font-size:14px; }
+  .gallery { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+  .g-item { border:1px solid #2c2517; border-radius:14px; overflow:hidden; background:#14110d; }
+  .g-item img { width:100%; height:190px; object-fit:cover; display:block; transition:transform .3s; }
+  .g-item:hover img { transform:scale(1.05); }
+  .g-item p { padding:10px; font-size:13px; text-align:center; color:#cfc4a8; }
+  .contact { background:linear-gradient(160deg,#171310,#100d0a); border:1px solid #2c2517; border-radius:18px; padding:30px 20px; text-align:center; }
+  .contact .row { margin:12px 0; font-size:17px; }
+  .contact a { color:#d4a437; text-decoration:none; }
+  .sticky-call {
+    position:fixed; bottom:18px; left:18px; right:18px; max-width:640px; margin:0 auto;
+    background:#d4a437; color:#141210; text-align:center; font-weight:bold; font-size:18px;
+    border-radius:40px; padding:14px; text-decoration:none; box-shadow:0 6px 24px #000a;
+  }
+  footer { text-align:center; padding:90px 16px 30px; color:#7a6f57; font-size:13px; }
+</style>
+</head>
+<body>
+<div class="hero">
+  <img src="logo.jpg" alt="Allen">
+  <h1 class="gold">Allen</h1>
+  <p class="tag">تعمیرات تخصصی دستگاه اسپرسو — خانگی و صنعتی</p>
+  <div class="badges">
+    <span class="badge">⚙️ قطعات اورجینال</span>
+    <span class="badge">🔧 تعمیر در کارگاه مجهز</span>
+    <span class="badge">🛒 فروش مستقیم از بندر گناوه</span>
+  </div>
+</div>
+<section>
+  <h2>خدمات</h2>
+  <div class="cards">
+    <div class="card"><div class="ic">🔧</div><div><h3>تعمیرات تخصصی</h3><p>عیب‌یابی و تعمیر انواع دستگاه اسپرسو خانگی و صنعتی در کارگاه مجهز</p></div></div>
+    <div class="card"><div class="ic">✨</div><div><h3>سرویس و رسوب‌زدایی</h3><p>سرویس دوره‌ای و رسوب‌زدایی تخصصی برای افزایش عمر دستگاه</p></div></div>
+    <div class="card"><div class="ic">⚙️</div><div><h3>قطعات اورجینال</h3><p>تأمین قطعات اصلی و اورجینال دستگاه‌های اسپرسو</p></div></div>
+    <div class="card"><div class="ic">🛒</div><div><h3>فروش دستگاه</h3><p>فروش انواع دستگاه اسپرسو خانگی و صنعتی — فروش مستقیم از بندر گناوه</p></div></div>
+  </div>
+</section>
+<section>
+  <h2>نمونه‌کارها</h2>
+  <div class="gallery">
+    <div class="g-item"><img src="gallery/work1.jpg" loading="lazy"><p>سرویس بویلر و لوله‌کشی مسی</p></div>
+    <div class="g-item"><img src="gallery/work2.jpg" loading="lazy"><p>تعمیر داخلی دستگاه صنعتی</p></div>
+    <div class="g-item"><img src="gallery/work3.jpg" loading="lazy"><p>رسوب‌زدایی بویلر</p></div>
+    <div class="g-item"><img src="gallery/work4.jpg" loading="lazy"><p>سرویس کامل دستگاه صنعتی</p></div>
+    <div class="g-item"><img src="gallery/work5.jpg" loading="lazy"><p>سرویس بویلر و اتصالات</p></div>
+    <div class="g-item"><img src="gallery/work6.jpg" loading="lazy"><p>اورهال و بازسازی قطعات</p></div>
+    <div class="g-item"><img src="gallery/work7.jpg" loading="lazy"><p>تعمیر تخصصی دستگاه صنعتی</p></div>
+  </div>
+</section>
+<section>
+  <h2>تماس</h2>
+  <div class="contact">
+    <div class="row">📍 خمین، چهارراه قدس</div>
+    <div class="row">📞 <a href="tel:09183658664" dir="ltr">09183658664</a></div>
+    <div class="row">📸 <a href="https://instagram.com/allen__services" dir="ltr">@allen__services</a></div>
+  </div>
+</section>
+<footer>Allen — تعمیرات تخصصی دستگاه اسپرسو ☕</footer>
+<a class="sticky-call" href="tel:09183658664">📞 تماس با Allen</a>
+</body>
+</html>
