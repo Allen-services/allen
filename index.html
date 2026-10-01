@@ -98,6 +98,13 @@
   .main-nav{display:none;gap:24px}
   .main-nav a{color:var(--mut);text-decoration:none;font-size:14.5px}
   .main-nav a:hover{color:var(--gold)}
+  .nav-drop{position:relative}
+  .nav-drop>a{display:inline-flex;align-items:center;gap:4px}
+  .nav-drop .arr{font-size:11px;color:var(--gold)}
+  .nav-sub{display:none;position:absolute;top:100%;right:0;min-width:150px;background:var(--bg2);border:1px solid var(--line);border-radius:12px;padding:6px;box-shadow:0 14px 34px #0007;z-index:70}
+  .nav-drop:hover .nav-sub,.nav-drop:focus-within .nav-sub{display:block}
+  .nav-sub a{display:block;padding:9px 14px;border-radius:8px}
+  .nav-sub a:hover{background:#e0a83c14}
   .hdr-actions{display:flex;align-items:center;gap:8px}
   .theme-btn{background:var(--card);border:1px solid var(--line);color:var(--gold);border-radius:10px;font-size:18px;padding:6px 11px;cursor:pointer;font-family:inherit}
   .btn{display:inline-block;padding:11px 30px;border-radius:30px;text-decoration:none;font-weight:bold;font-size:14.5px;transition:transform .15s;border:none;cursor:pointer;font-family:inherit}
@@ -360,7 +367,13 @@
     <nav class="main-nav" aria-label="ناوبری اصلی">
       <a href="#services">خدمات</a>
       <a href="#shop">فروش دستگاه</a>
-      <a href="diagrams.html">نقشه انفجاری</a>
+      <div class="nav-drop">
+        <a href="diagrams.html" aria-haspopup="true">نقشه انفجاری <span class="arr">▾</span></a>
+        <div class="nav-sub">
+          <a href="diagrams.html">اسپرسوساز</a>
+          <a href="grinder-diagrams.html">آسیاب</a>
+        </div>
+      </div>
       <a href="#work">نمونه‌کارها</a>
       <a href="#guides">راهنما</a>
       <a href="#faq">سوالات</a>
@@ -439,7 +452,11 @@
   <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33h.09a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51h.09a1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82v.09a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z" />
 </svg> آسیاب قهوه</a>
       </div>
-      <a href="diagrams.html">نقشه انفجاری</a>
+      <button class="menu-parent" id="dgParent" aria-expanded="false">نقشه انفجاری <span class="arr">▾</span></button>
+      <div class="menu-sub" id="dgSub">
+        <a href="diagrams.html">اسپرسوساز</a>
+        <a href="grinder-diagrams.html">آسیاب</a>
+      </div>
       <a href="#work">نمونه‌کارها</a>
       <a href="#guides">راهنمای تعمیرات</a>
       <a href="#request">ثبت درخواست تعمیر</a>
@@ -1123,6 +1140,12 @@ saleParent.addEventListener('click',function(){
   var o=saleSub.classList.toggle('open');
   saleParent.classList.toggle('open',o);
   saleParent.setAttribute('aria-expanded',o);
+});
+var dgParent=document.getElementById('dgParent'),dgSub=document.getElementById('dgSub');
+dgParent.addEventListener('click',function(){
+  var o=dgSub.classList.toggle('open');
+  dgParent.classList.toggle('open',o);
+  dgParent.setAttribute('aria-expanded',o);
 });
 // فرم → تلگرام
 document.getElementById('reqForm').addEventListener('submit', function(e){
