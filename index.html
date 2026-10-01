@@ -355,6 +355,37 @@
   .cbox input::placeholder,.cbox textarea::placeholder{color:var(--mut)}
   .cbox textarea{min-height:90px;resize:vertical}
   .cbox .btn{width:100%}
+
+  /* ===== دیزاین‌های جدید — مهر ۱۴۰۵ ===== */
+  .hero .wrap{text-align:center}
+  .hero .kicker{letter-spacing:2px;font-size:12px;padding:8px 20px}
+  .hero h1{margin-left:auto;margin-right:auto}
+  .hero .lead{margin-left:auto;margin-right:auto}
+  .hero .cta-row{justify-content:center}
+  .hero-stats2{display:flex;gap:10px;justify-content:center;margin-top:28px;flex-wrap:wrap}
+  .stat{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px 22px;min-width:112px}
+  .stat b{display:block;font-size:20px;color:var(--gold2);margin-bottom:2px}
+  [data-theme="light"] .stat b{color:var(--gold)}
+  .stat span{font-size:12px;color:var(--mut)}
+  .svc-list{display:grid;gap:12px}
+  @media(min-width:720px){.svc-list{grid-template-columns:repeat(2,1fr)}}
+  .svc{display:flex;align-items:center;gap:14px;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:16px 18px;text-decoration:none;color:var(--ink);transition:transform .18s,border-color .18s}
+  .svc:hover{transform:translateY(-3px);border-color:var(--gold)}
+  .svc-ic{flex:0 0 54px;width:54px;height:54px;border-radius:15px;background:linear-gradient(135deg,var(--gold2),var(--gold));display:flex;align-items:center;justify-content:center;color:#1c1409}
+  .svc-ic svg{width:26px;height:26px}
+  .svc-tx{flex:1;min-width:0}
+  .svc-tx b{display:block;font-size:15.5px;margin-bottom:4px}
+  .svc-tx i{display:block;font-style:normal;font-size:12.5px;color:var(--mut);line-height:1.8}
+  .svc-arr{color:var(--gold);font-size:20px;flex:0 0 auto}
+  #sale-banner{padding:6px 0 34px}
+  .sale-bn{position:relative;display:block;border-radius:22px;overflow:hidden;border:1px solid var(--line);min-height:330px}
+  .sale-bn picture img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .sale-bn::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(8,5,2,.94) 25%,rgba(8,5,2,.35) 60%,rgba(8,5,2,.05))}
+  .sale-tx{position:absolute;z-index:2;bottom:0;right:0;left:0;padding:24px 22px;color:#fff}
+  .sale-k{display:inline-block;font-size:12px;color:#1c1409;background:linear-gradient(135deg,var(--gold2),var(--gold));border-radius:999px;padding:5px 14px;font-weight:bold;margin-bottom:10px}
+  .sale-t{display:block;font-size:23px;margin-bottom:6px;line-height:1.6}
+  .sale-t .gold{color:var(--gold2)}
+  .sale-i{display:block;font-style:normal;font-size:13px;color:#d8cbb4;margin-bottom:14px}
 </style>
 </head>
 <body>
@@ -473,120 +504,17 @@
   <div class="hero-sweep" aria-hidden="true"></div>
   <div class="hero-grain" aria-hidden="true"></div>
   <div class="wrap">
-    <span class="kicker"><svg
- 
-  xmlns="http://www.w3.org/2000/svg"
- 
- 
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <path d="M12 20a8 8 0 1 0 0-16 8 8 0 0 0 0 16Z" />
-  <path d="M12 14a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z" />
-  <path d="M12 2v2" />
-  <path d="M12 22v-2" />
-  <path d="m17 20.66-1-1.73" />
-  <path d="M11 10.27 7 3.34" />
-  <path d="m20.66 17-1.73-1" />
-  <path d="m3.34 7 1.73 1" />
-  <path d="M14 12h8" />
-  <path d="M2 12h2" />
-  <path d="m20.66 7-1.73 1" />
-  <path d="m3.34 17 1.73-1" />
-  <path d="m17 3.34-1 1.73" />
-  <path d="m11 13.73-4 6.93" />
-</svg> مرجع تخصصی تعمیر اسپرسوساز</span>
+    <span class="kicker">ALLENSERVICE • تعمیر تخصصی اسپرسوساز</span>
     <h1>تعمیر <em>قهوه‌ساز و اسپرسوساز</em><br>خانگی و صنعتی</h1>
     <p class="lead">عیب‌یابی دقیق، سرویس و رسوب‌زدایی تخصصی، قطعات اورجینال و فروش دستگاه — همه در کارگاه مجهز Allenservice</p>
     <div class="cta-row">
-      <a class="btn btn-gold" href="#request"><svg
- 
-  xmlns="http://www.w3.org/2000/svg"
- 
- 
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <rect x="8" y="2" rx="1" ry="1" />
-  <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" />
-  <path d="M12 11h4" />
-  <path d="M12 16h4" />
-  <path d="M8 11h.01" />
-  <path d="M8 16h.01" />
-</svg> ثبت سفارش تعمیر</a>
+      <a class="btn btn-gold" href="https://t.me/allenservice"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg> مشاوره در تلگرام</a>
       <a class="btn btn-outline" href="tel:09183658664"><svg class="ph" viewBox="0 0 512 512" aria-hidden="true"><path d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.1 18.4-30 11.6-46.3l-40-96z"/></svg> تماس با ما</a>
     </div>
-    <div class="hero-stats">
-      <div><b><svg
- 
-  xmlns="http://www.w3.org/2000/svg"
- 
- 
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7 5V8l-7 5V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z" />
-  <path d="M17 18h1" />
-  <path d="M12 18h1" />
-  <path d="M7 18h1" />
-</svg></b><span>کارگاه مجهز</span></div>
-      <div><b><svg
- 
-  xmlns="http://www.w3.org/2000/svg"
- 
- 
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <path d="M12 20a8 8 0 1 0 0-16 8 8 0 0 0 0 16Z" />
-  <path d="M12 14a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z" />
-  <path d="M12 2v2" />
-  <path d="M12 22v-2" />
-  <path d="m17 20.66-1-1.73" />
-  <path d="M11 10.27 7 3.34" />
-  <path d="m20.66 17-1.73-1" />
-  <path d="m3.34 7 1.73 1" />
-  <path d="M14 12h8" />
-  <path d="M2 12h2" />
-  <path d="m20.66 7-1.73 1" />
-  <path d="m3.34 17 1.73-1" />
-  <path d="m17 3.34-1 1.73" />
-  <path d="m11 13.73-4 6.93" />
-</svg></b><span>قطعات اورجینال</span></div>
-      <div><b><svg
- 
-  xmlns="http://www.w3.org/2000/svg"
- 
- 
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <path d="M12 10.189V14" />
-  <path d="M12 2v3" />
-  <path d="M19 13V7a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v6" />
-  <path d="M19.38 20A11.6 11.6 0 0 0 21 14l-8.188-3.639a2 2 0 0 0-1.624 0L3 14a11.6 11.6 0 0 0 2.81 7.76" />
-  <path d="M2 21c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1s1.2 1 2.5 1c2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1" />
-</svg></b><span>فروش مستقیم گناوه</span></div>
+    <div class="hero-stats2">
+      <div class="stat"><b>۴۵+</b><span>برند نقشه فنی</span></div>
+      <div class="stat"><b>۷ روز</b><span>گارانتی خانگی</span></div>
+      <div class="stat"><b>۳ ماه</b><span>گارانتی صنعتی</span></div>
     </div>
   </div>
 </section>
@@ -603,8 +531,9 @@
         <h2>چه کارهایی برای دستگاهت می‌کنیم؟</h2>
         <p>از عیب‌یابی تا سرویس دوره‌ای — همه خدمات تخصصی اسپرسوساز در یک کارگاه</p>
       </div>
-      <div class="grid-3">
-        <div class="card"><div class="ic"><svg
+      <div class="svc-list">
+        <a class="svc" href="industrial.html">
+          <span class="svc-ic"><svg
  
   xmlns="http://www.w3.org/2000/svg"
  
@@ -617,8 +546,12 @@
   stroke-linejoin="round"
 >
   <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
-</svg></div><h3>تعمیرات تخصصی</h3><p>عیب‌یابی و تعمیر دستگاه خانگی و صنعتی در کارگاه مجهز با ابزار حرفه‌ای</p></div>
-        <div class="card"><div class="ic"><svg
+</svg></span>
+          <span class="svc-tx"><b>تعمیرات تخصصی</b><i>عیب‌یابی و تعمیر دستگاه خانگی و صنعتی در کارگاه مجهز با ابزار حرفه‌ای</i></span>
+          <span class="svc-arr">←</span>
+        </a>
+        <a class="svc" href="descaling.html">
+          <span class="svc-ic"><svg
  
   xmlns="http://www.w3.org/2000/svg"
  
@@ -632,8 +565,12 @@
 >
   <path d="M7 16.3c2.2 0 4-1.83 4-4.05 0-1.16-.57-2.26-1.71-3.19S7.29 6.75 7 5.3c-.29 1.45-1.14 2.84-2.29 3.76S3 11.1 3 12.25c0 2.22 1.8 4.05 4 4.05z" />
   <path d="M12.56 6.6A10.97 10.97 0 0 0 14 3.02c.5 2.5 2 4.9 4 6.5s3 3.5 3 5.5a6.98 6.98 0 0 1-11.91 4.97" />
-</svg></div><h3>سرویس و رسوب‌زدایی</h3><p>سرویس دوره‌ای بویلر و قطعات داخلی برای افزایش عمر و کیفیت قهوه</p></div>
-        <div class="card"><div class="ic"><svg
+</svg></span>
+          <span class="svc-tx"><b>سرویس و رسوب‌زدایی</b><i>سرویس دوره‌ای بویلر و قطعات داخلی برای افزایش عمر و کیفیت قهوه</i></span>
+          <span class="svc-arr">←</span>
+        </a>
+        <a class="svc" href="parts.html">
+          <span class="svc-ic"><svg
  
   xmlns="http://www.w3.org/2000/svg"
  
@@ -659,8 +596,12 @@
   <path d="m3.34 17 1.73-1" />
   <path d="m17 3.34-1 1.73" />
   <path d="m11 13.73-4 6.93" />
-</svg></div><h3>قطعات اورجینال</h3><p>تأمین قطعات اصلی دستگاه‌های اسپرسو خانگی و صنعتی</p></div>
-        <div class="card"><div class="ic"><svg
+</svg></span>
+          <span class="svc-tx"><b>قطعات اورجینال</b><i>تأمین قطعات اصلی دستگاه‌های اسپرسو خانگی و صنعتی</i></span>
+          <span class="svc-arr">←</span>
+        </a>
+        <a class="svc" href="industrial.html">
+          <span class="svc-ic"><svg
  
   xmlns="http://www.w3.org/2000/svg"
  
@@ -676,8 +617,12 @@
   <path d="M17 18h1" />
   <path d="M12 18h1" />
   <path d="M7 18h1" />
-</svg></div><h3>تعمیر دستگاه صنعتی</h3><p>اورهال بویلر، تعویض المنت، سرویس هدگروپ و تعمیر پمپ دستگاه کافه‌ای</p></div>
-        <div class="card"><div class="ic"><svg
+</svg></span>
+          <span class="svc-tx"><b>تعمیر دستگاه صنعتی</b><i>اورهال بویلر، تعویض المنت، سرویس هدگروپ و تعمیر پمپ دستگاه کافه‌ای</i></span>
+          <span class="svc-arr">←</span>
+        </a>
+        <a class="svc" href="forsale.html">
+          <span class="svc-ic"><svg
  
   xmlns="http://www.w3.org/2000/svg"
  
@@ -692,8 +637,15 @@
   <circle cx="8" cy="21" r="1" />
   <circle cx="19" cy="21" r="1" />
   <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" />
-</svg></div><h3>فروش دستگاه</h3><p>فروش مستقیم دستگاه اسپرسو خانگی و صنعتی از بندر گناوه</p></div>
-        <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg></div><h3>مشاوره در تلگرام</h3><p>سوالت درباره مشکل دستگاهت را بپرس، راهنماییت می‌کنیم</p></div>
+</svg></span>
+          <span class="svc-tx"><b>فروش دستگاه</b><i>فروش مستقیم دستگاه اسپرسو خانگی و صنعتی از بندر گناوه</i></span>
+          <span class="svc-arr">←</span>
+        </a>
+        <a class="svc" href="https://t.me/allenservice">
+          <span class="svc-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg></span>
+          <span class="svc-tx"><b>مشاوره در تلگرام</b><i>سوالت درباره مشکل دستگاهت را بپرس، راهنماییت می‌کنیم</i></span>
+          <span class="svc-arr">←</span>
+        </a>
       </div>
     </div>
   </section>
@@ -728,6 +680,22 @@
           <div class="pbody"><h3>نقشه انفجاری</h3><p>نقشه فنی ۳۴ برند: فائما، آستوریا، بیزرا، رانسیلیو، نووا سیمونلی، سن‌رمو، وگا، چیمبالی و ۲۶ برند دیگه — کد قطعه‌ات رو پیدا کن</p><a class="btn btn-gold" href="diagrams.html">دیدن نقشه‌ها</a></div>
         </div>
       </div>
+    </div>
+  </section>
+
+
+  <!-- ===== بنر فروش ویژه ===== -->
+  <section id="sale-banner">
+    <div class="wrap">
+      <a class="sale-bn" href="forsale.html">
+        <picture><source srcset="img/forsale-bezzera-2g.webp" type="image/webp"><img src="img/forsale-bezzera-2g.jpg" alt="بیزرا دو گروپ تال‌کاپ مدل ۲۰۱۸" loading="lazy"></picture>
+        <span class="sale-tx">
+          <b class="sale-k">پیشنهاد ویژه</b>
+          <b class="sale-t">بیزرا دو گروپ <span class="gold">تال‌کاپ</span></b>
+          <i class="sale-i">مدل ۲۰۱۸ ایتالیایی — ۴۵۰ میلیون تومان</i>
+          <span class="btn btn-gold">دیدن دستگاه</span>
+        </span>
+      </a>
     </div>
   </section>
 
@@ -1211,7 +1179,7 @@ document.querySelectorAll('#chatQuick button').forEach(function(b){
 });
 // افکت ظاهر شدن کارت‌ها موقع اسکرول
 (function(){
-  var els = document.querySelectorAll('.card,.product,.g-item,.step,.sec-head,.about-card,.form-card,.contact-card');
+  var els = document.querySelectorAll('.card,.product,.g-item,.step,.sec-head,.about-card,.form-card,.contact-card,.svc,.sale-bn,.stat');
   els.forEach(function(el){ el.classList.add('reveal'); });
   function showAll(){ els.forEach(function(el){ el.classList.add('visible'); }); }
   if(!('IntersectionObserver' in window)){ showAll(); return; }
