@@ -386,6 +386,24 @@
   .sale-t{display:block;font-size:23px;margin-bottom:6px;line-height:1.6}
   .sale-t .gold{color:var(--gold2)}
   .sale-i{display:block;font-style:normal;font-size:13px;color:#d8cbb4;margin-bottom:14px}
+/* ===== پولیش Apple Design — سبک، بدون JS ===== */
+:root{--spring:cubic-bezier(.22,1,.36,1)}
+/* فیدبک لمسی فوری: دکمه و کارت با فشار کمی جمع می‌شن */
+.btn{transition-timing-function:var(--spring)}
+.btn:active{transform:scale(.96)}
+.svc:active,.card:active,.product:active,.g-item:active{transform:scale(.98)}
+.chat-bubble:active{transform:scale(.9)}
+/* بازشدن چت و پاپ‌آپ از نقطه شروع */
+.chat-box.open{animation:popIn .28s var(--spring);transform-origin:bottom left}
+.num-modal.open .num-card{animation:popIn .32s var(--spring)}
+@keyframes popIn{from{opacity:0;transform:translateY(16px) scale(.96)}to{opacity:1;transform:none}}
+/* نشستن نرم‌تر reveal */
+.reveal{transition:opacity .7s ease,transform .7s var(--spring)}
+/* احترام به کاهش حرکت */
+@media (prefers-reduced-motion:reduce){
+.reveal{opacity:1!important;transform:none!important;transition:none}
+*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}
+}
 </style>
 </head>
 <body>
