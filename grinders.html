@@ -45,7 +45,7 @@
   img{max-width:100%}
 
   /* ===== هدر ===== */
-  .site-header{position:sticky;top:0;z-index:50;background:var(--hdr);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+  .site-header{position:sticky;top:0;z-index:50;background:var(--hdr);border-bottom:1px solid var(--line)}
   .site-header .wrap{display:flex;align-items:center;justify-content:space-between;padding-top:10px;padding-bottom:10px;gap:10px}
   .brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);font-weight:bold;font-size:19px;letter-spacing:1px}
   .brand img{width:42px;height:42px;border-radius:12px;border:2px solid var(--gold)}
@@ -200,7 +200,7 @@
   .chat-input button{background:#171008;color:var(--gold2);border:none;padding:0 18px;font-size:18px;cursor:pointer;font-family:inherit}
 
   /* منوی پایین */
-  .bottom-nav{position:fixed;bottom:0;right:0;left:0;z-index:60;background:rgba(20,16,11,.62);-webkit-backdrop-filter:blur(18px) saturate(1.4);backdrop-filter:blur(18px) saturate(1.4);border-top:1px solid var(--line);display:flex;transition:transform .35s ease}
+  .bottom-nav{position:fixed;bottom:0;right:0;left:0;z-index:60;background:rgba(20,16,11,.62);border-top:1px solid var(--line);display:flex;transition:transform .35s ease}
   [data-theme="light"] .bottom-nav{background:rgba(250,246,238,.62)}
   .bottom-nav.nav-hidden{transform:translateY(110%)}
   .bottom-nav a{flex:1;text-align:center;padding:9px 4px 10px;text-decoration:none;color:var(--mut);font-size:11.5px}
@@ -255,7 +255,7 @@
   .to-top:hover{transform:translateY(-3px)}
 
   /* ===== پاپ‌آپ شماره تماس/تلگرام (فقط دسکتاپ) ===== */
-  .num-modal{position:fixed;inset:0;z-index:300;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.55);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);opacity:0;visibility:hidden;transition:opacity .25s}
+  .num-modal{position:fixed;inset:0;z-index:300;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.55);opacity:0;visibility:hidden;transition:opacity .25s}
   .num-modal.open{opacity:1;visibility:visible}
   .num-card{position:relative;background:var(--card);border:1px solid var(--gold);border-radius:22px;padding:34px 38px;text-align:center;max-width:340px;width:calc(100% - 48px);box-shadow:0 24px 60px #000a;transform:translateY(12px) scale(.97);transition:transform .25s}
   .num-modal.open .num-card{transform:none}
